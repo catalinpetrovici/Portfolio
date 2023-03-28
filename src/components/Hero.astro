@@ -205,9 +205,11 @@
   </svg>
   <div> 
     <h1>Hi, I'm Catalin <br> a <strong>Software Developer</strong> <br> & <strong>Electrical Engineer</strong></h1>
-    <p>Passionate about developing systems, excited to explore new possibilities and driven to expand my knowledge constantly.</p>
-    <p>Here to help make your dream come into being as easy and fun as possible.</p>
-    <a class="bg-[#57EFF9]  dark:bg-[#FFF031] text-[#333333]" href="#projects">Discover&nbsp;awesome&nbsp;projects</a>
+    <p class="text-fontLightGray3 dark:text-fontDarkGray2">Passionate about developing systems, excited to explore new possibilities and driven to expand my knowledge constantly.</p>
+    <p class="text-fontLightGray3 dark:text-fontDarkGray2">Here to help make your dream come into being as easy and fun as possible.</p>
+    <a class="border-2 border-btnLight bg-btnLight text-btnFont hover:bg-transparent dark:bg-btnDark dark:border-btnDark dark:hover:text-dark" href="#projects">
+      Discover&nbsp;projects
+    </a>
   </div> 
 </section> 
 
@@ -229,16 +231,16 @@
     display: block;
     max-width: 50ch;
     font-size: clamp(1.6rem, 2.5vw, 2rem);
-    line-height: 1.5;
   }
 
   a {
     margin-top: 3rem;
     display: inline-block;
-    padding: 1.5rem 2.5rem;
-    font-size: clamp(1.8rem, 2.5vw, 2rem);
+    padding: 1rem 2rem;
+    font-size: clamp(1.7rem, 2.5vw, 2rem);
     font-weight: 900;
     border-radius: 10px;
+    transition: all 200ms ease-in;
   }
 
   
@@ -261,7 +263,7 @@
   }
 
   section {
-    margin-top: 5rem;
+    margin-top: 8rem;
     display: flex;
     gap: 3rem;
     justify-content: space-between;
@@ -269,6 +271,12 @@
 
   a {
     margin-top: 5rem;
+  }
+  
+  @media only screen and (min-width: 400px) {
+    a {
+      padding: 1.5rem 2.5rem;
+    }
   }
 
 }
