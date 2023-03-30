@@ -1,0 +1,33 @@
+---
+interface Props {
+  class?: string;
+  width?: string;
+  height?: string;
+}
+const { class: className, width = '50', height = '50' } = Astro.props;
+---
+
+
+<svg
+  class={className}
+  width={width}
+  height={height}
+  viewBox='0 0 50 50'
+  fill='none'
+  xmlns='http://www.w3.org/2000/svg'
+>
+  <g clip-path='url(#clip0_142_144)'>
+    <path
+      d='M21.6699 29.8145L29.8535 25.0098L21.6699 20.2051V29.8145Z'
+      fill='currentColor'></path>
+    <path
+      d='M46.0938 0H3.90625C1.74805 0 0 1.74805 0 3.90625V46.0938C0 48.252 1.74805 50 3.90625 50H46.0938C48.252 50 50 48.252 50 46.0938V3.90625C50 1.74805 48.252 0 46.0938 0ZM37.5 29.4727C37.5 33.7793 33.1934 33.7793 33.1934 33.7793H16.8066C12.5 33.7793 12.5 29.4727 12.5 29.4727V20.5371C12.5 16.2305 16.8066 16.2305 16.8066 16.2305H33.1934C37.5 16.2305 37.5 20.5371 37.5 20.5371V29.4727Z'
+      fill='currentColor'></path>
+  </g>
+  <defs>
+    <clipPath id='clip0_142_144'>
+      <rect width='50' height='50' rx='10' fill='currentColor'></rect>
+    </clipPath>
+  </defs>
+</svg>
+

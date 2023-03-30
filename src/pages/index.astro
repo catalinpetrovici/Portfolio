@@ -2,27 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import MainSkills from '../components/MainSkills.astro';
+import Features from '../components/Features.astro';
 import Projects from '../components/Projects.astro';
 import WorkTogether from '../components/WorkTogether.astro';
 import About from '../components/About.astro';
 import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.svelte';
 ---
 
 <Layout title="Software Developer - Catalin Petrovici">
 
 	<Header/>
+
 	<main id="main-content">
 		
 		<Hero/>
-		<MainSkills/>
+		<Features/>
 		<Projects/>
 		<WorkTogether/>
 		<About/>
 		<Footer/>
 
 	</main>
+	
 </Layout>
 
 <style>
@@ -32,46 +33,4 @@ import Nav from '../components/Nav.svelte';
 		padding-right: var(--padding-layout-right);
 	}
 	
-	/* main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	} */
 </style>

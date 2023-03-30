@@ -1,9 +1,10 @@
 ---
-import CaierSpaceLogo from '../components/projectsLogos/CaierSpace.astro';
-import HemsLogo from '../components/projectsLogos/Hems.astro';
-import SmartHomeLogo from '../components/projectsLogos/SmartHome.astro';
-import ReactLogo from '../components/projectsLogos/React.astro';
-import NodeJSLogo from '../components/projectsLogos/NodeJS.astro';
+import CaierSpaceLogo from '../svg/projects/CaierSpace.astro';
+import HemsLogo from '../svg/projects/Hems.astro';
+import SmartHomeLogo from '../svg/projects/SmartHome.astro';
+import ReactLogo from '../svg/projects/React.astro';
+import NodeJSLogo from '../svg/projects/NodeJS.astro';
+import ArrowRight from '../svg/Symbols/ArrowRight.astro';
 
 const projects = [
   //
@@ -16,8 +17,8 @@ const projects = [
     description: `I designed and developed the simplest accounting tool for freelancers. 
       From proposal to payment, Incomee is the easiest tool to run your 
       freelance business seamlessly ✌️`,
-    logo: {
-      svg: CaierSpaceLogo,
+    Logo: {
+      Svg: CaierSpaceLogo,
     },
     image: {
       alt: 'CaierSpace Landing Page Project Showcase',
@@ -75,8 +76,8 @@ const projects = [
       and user experience. Also, I worked closely with the mobile engineers to create a 
       Mobile Pattern Library to improve the quality of the mobile products and to save 
       time during implementation.`,
-    logo: {
-      svg: HemsLogo,
+    Logo: {
+      Svg: HemsLogo,
     },
     image: {
       alt: 'HEMS Publication Showcase',
@@ -129,8 +130,8 @@ const projects = [
       and user experience. Also, I worked closely with the mobile engineers to create a 
       Mobile Pattern Library to improve the quality of the mobile products and to save 
       time during implementation.`,
-    logo: {
-      svg: SmartHomeLogo,
+    Logo: {
+      Svg: SmartHomeLogo,
     },
     image: {
       alt: 'SmartHome Project Showcase',
@@ -188,8 +189,8 @@ const projects = [
       and user experience. Also, I worked closely with the mobile engineers to create a 
       Mobile Pattern Library to improve the quality of the mobile products and to save 
       time during implementation.`,
-    logo: {
-      svg: ReactLogo,
+    Logo: {
+      Svg: ReactLogo,
     },
     image: {
       alt: 'React Projects Showcase',
@@ -244,14 +245,14 @@ const projects = [
       and user experience. Also, I worked closely with the mobile engineers to create a 
       Mobile Pattern Library to improve the quality of the mobile products and to save 
       time during implementation.`,
-    logo: {
-      svg: NodeJSLogo,
+    Logo: {
+      Svg: NodeJSLogo,
     },
     image: {
-      alt: 'NodeJS Projects Showcase',
-      scr: './NodeJS/NodeJS@1x.png',
-      height: '408',
-      width: '700',
+      // alt: 'NodeJS Projects Showcase',
+      // scr: './NodeJS/NodeJS@1x.png',
+      // height: '408',
+      // width: '700',
       source: [
         // {
         //   srcset: './NodeJS/NodeJS-mobile@2x.avif 2x, ./NodeJS/NodeJS-mobile@1x.avif',
@@ -293,12 +294,12 @@ const projects = [
   <h2>Projects</h2>
   {
     projects.map((item) => {
-      const { title, subtitle, href, description, logo, image } = item;
+      const { title, subtitle, href, description, Logo, image } = item;
       return (
         <article class='project'>
           <div class='description'>
             <div class='project-heading'>
-              <logo.svg />
+              <Logo.Svg />
               <div class='ml-8'>
                 <span class='subtitle text-fontLightGray2 dark:text-fontDarkGray4'>
                   {subtitle}
@@ -310,21 +311,7 @@ const projects = [
               {description}
             </p>
             <a href={href} class='hover:text-btnLight dark:hover:text-btnDark'>
-              <svg
-                width='20'
-                height='20'
-                viewBox='0 0 14 14'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  d='M8 1L13 7M13 7L8 13M13 7H1'
-                  stroke='currentColor'
-                  stroke-width='2'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                />
-              </svg>
+              <ArrowRight/>
               View Project
             </a>
           </div>
