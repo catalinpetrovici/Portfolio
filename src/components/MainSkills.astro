@@ -27,10 +27,18 @@
       </svg>
       
       <h3>Frontend Developer</h3>
-      <p class="text-fontLightGray2 dark:text-fontDarkGray3">I design user friendly, incl usive and accessible products. 
-        I also work directly with development teams to deliver useful design 
-        specifications: user flows, mockups, design systems, interaction guidelines, etc.
+      <p class="text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description">My goal is to create interfaces that are easy to use and navigate for all types of users.
+        I work hard to make sure that the design is accessible and meets the needs of the target audience. Once the design is finalized, I bring it to life by coding it into a web browser format, making it viewable and interactive for all users.
       </p>
+      <button class="btn-read-more hover:text-btnLight dark:hover:text-btnDark">
+        <span class="btn-read-more-text">Read more</span>
+        <svg class="btn-read-more-open" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+        <svg class="btn-read-more-close hidden" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>        
+      </button>
     </div>
 
     <div class="card border-light dark:border-dark">
@@ -53,23 +61,43 @@
       </svg> 
 
       <h3>Backend Developer</h3>
-      <p class="text-fontLightGray2 dark:text-fontDarkGray3">I design user friendly, incl usive and accessible products. 
-        I also work directly with development teams to deliver useful design 
-        specifications: user flows, mockups, design systems, interaction guidelines, etc.
+      <p class="text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description">My focus is to make sure that the behind-the-scenes of the web application is safe, 
+        reliable, and works well. I'm in charge of creating and managing the infrastructure and database that powers the frontend of the web application. 
+        This includes making sure that the web application is scalable and performs efficiently, as well as making sure that the security of the web application is top-notch.
       </p>
+      <button class="btn-read-more hover:text-btnLight dark:hover:text-btnDark">
+        <span class="btn-read-more-text">Read more</span>
+        <svg class="btn-read-more-open" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+        <svg class="btn-read-more-close hidden" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>        
+      </button>
     </div>
 
     <div class="card border-light dark:border-dark">
       <picture>
         <source srcset="./ElectricalEngineer/ElectricalEngineer.webp" type="image/webp">
-        <img class="m-auto" height="100px" width="150px" src="./ElectricalEngineer.png" alt="Breadboard with electrical components">
+        <img class="m-auto" height="100" width="150" src="./ElectricalEngineer.png" alt="Breadboard with electrical components">
       </picture>
       
       <h3>Electrical Engineer</h3>
-      <p class="text-fontLightGray2 dark:text-fontDarkGray3">I design user friendly, incl usive and accessible products. 
-        I also work directly with development teams to deliver useful design 
-        specifications: user flows, mockups, design systems, interaction guidelines, etc.
+      <p class="text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description">I get to work on some really cool projects! 
+        I'm responsible for developing and creating prototypes of electrical systems, control systems, and embedded systems. 
+        Whenever something goes wrong, I get to put on my troubleshooting hat and find solutions to any issues that come up. 
+        Safety is a top priority for me, so I always make sure that the electrical systems I work on are both efficient and 
+        meet the necessary specifications. Testing is also a big part of my job, making sure everything is working perfectly before it's ready to go.
       </p>
+      <button class="btn-read-more hover:text-btnLight dark:hover:text-btnDark">
+        <span class="btn-read-more-text">Read more</span>
+        <svg class="btn-read-more-open" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+        <svg class="btn-read-more-close hidden" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>        
+      </button>
     </div>
 
   </div>
@@ -100,6 +128,7 @@
     display: flex;
     gap: 1rem;
     justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
@@ -118,4 +147,62 @@
     margin: 0 auto;
   }
 
+  button {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  button svg {
+    margin: 0;
+    margin-left: 1rem;
+    transition: all 200ms ease-in;
+  }
+
+  .btn-read-more {
+    display: inline-flex;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+
 </style>
+
+
+<script>
+
+  const maxNumberCharacters = 200;
+  const descriptionParagraphs = document.querySelectorAll('.main-skills_description')!;
+  const descriptionButtons = document.querySelectorAll('.btn-read-more')!;
+
+  descriptionParagraphs.forEach((paragraph) => {
+    if(!paragraph.textContent) return;
+
+    if(paragraph.textContent.length < maxNumberCharacters){
+
+    } else {
+      const textContent = paragraph.textContent.slice(0, maxNumberCharacters);
+      const moreTextContent = paragraph.textContent.slice(maxNumberCharacters);
+      paragraph.innerHTML = `${textContent}<span class="read-more-dots">...</span><span class="hidden read-more-text">${moreTextContent}</span>`
+    }
+  })
+
+  descriptionButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const paragraph = button.parentElement! as HTMLDivElement;
+      if(!paragraph) return;
+
+      paragraph.querySelector(".read-more-dots")?.classList.toggle('hidden');
+      paragraph.querySelector(".read-more-text")?.classList.toggle('hidden');
+      paragraph.querySelector(".btn-read-more-open")?.classList.toggle('hidden');
+      paragraph.querySelector(".btn-read-more-close")?.classList.toggle('hidden');
+
+      const buttonText = paragraph.querySelector(".btn-read-more-text");
+      if(!buttonText) return;
+      
+      buttonText.textContent?.startsWith("Read more") ? buttonText.textContent = "Read less" :  buttonText.textContent = "Read more"
+    })
+  })
+
+
+
+</script>

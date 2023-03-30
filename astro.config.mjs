@@ -2,12 +2,15 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
 import robotsTxt from 'astro-robots-txt';
+import svelte from '@astrojs/svelte';
 
-import image from '@astrojs/image';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://catalinpetrovici.com',
   integrations: [
+    svelte(),
     tailwind(),
     // compress({
     //   css: false,
@@ -17,6 +20,9 @@ export default defineConfig({
     //   png: false,
     // }),
     robotsTxt(),
-    // image(),
+    sitemap(),
   ],
+  // server: {
+  //   port: 3001
+  // }
 });
