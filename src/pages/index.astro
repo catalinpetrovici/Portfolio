@@ -9,28 +9,27 @@ import About from '../components/About.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Software Developer - Catalin Petrovici">
+<Layout
+  title='Software Developer - Catalin Petrovici'
+  description='Petrovici Catalin is a Personal website portfolio to showcase projects and personal information.'
+  canonicalURL=''
+>
 
-	<Header/>
-
-	<main id="main-content">
-		
-		<Hero/>
-		<Features/>
-		<Projects/>
-		<WorkTogether/>
-		<About/>
-		<Footer/>
-
-	</main>
+  <Header />
+  <main id='main-content'>
+    <Hero />
+    <Features />
+    <Projects />
+    <WorkTogether />
+    <About />
+    <Footer />
+  </main>
 	
 </Layout>
 
 <style>
-
-	main {
-		padding-left: var(--padding-layout-left);
-		padding-right: var(--padding-layout-right);
-	}
-	
+  main {
+    padding-left: var(--padding-layout-left);
+    padding-right: var(--padding-layout-right);
+  }
 </style>
