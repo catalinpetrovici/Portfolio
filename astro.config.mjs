@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
 import robotsTxt from 'astro-robots-txt';
-import svelte from '@astrojs/svelte';
 import { VitePWA } from 'vite-plugin-pwa';
 
 import sitemap from '@astrojs/sitemap';
@@ -13,7 +12,6 @@ import manifest from './src/utils/manifest.ts';
 export default defineConfig({
   site: 'https://catalinpetrovici.com',
   integrations: [
-    svelte(),
     tailwind(),
     // compress({
     //   css: false,
