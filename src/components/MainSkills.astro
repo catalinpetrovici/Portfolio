@@ -1,112 +1,143 @@
 ---
-
+const mainSkills = [
+  {
+    title: 'Frontend Developer',
+    description: `My goal is to create interfaces that are easy to use and navigate for
+        all types of users. I work hard to make sure that the design is
+        accessible and meets the needs of the target audience. Once the design
+        is finalized, I bring it to life by coding it into a web browser format,
+        making it viewable and interactive for all users.`,
+    image: {
+      alt: 'Website layout picture',
+      scr: './Frontend/FrontendPicture.png',
+      height: '100',
+      width: '135',
+      source: [
+        {
+          srcset: './Frontend/FrontendPicture.webp',
+          type: 'image/webp',
+        },
+      ],
+    },
+  },
+  {
+    title: 'Backend Developer',
+    description: `My focus is to make sure that the behind-the-scenes of the web
+        application is safe, reliable, and works well. I'm in charge of creating
+        and managing the infrastructure and database that powers the frontend of
+        the web application. This includes making sure that the web application
+        is scalable and performs efficiently, as well as making sure that the
+        security of the web application is top-notch.`,
+    image: {
+      alt: 'Laptop with terminal open picture',
+      scr: './Backend/BackendPicture.png',
+      height: '100',
+      width: '150',
+      source: [
+        {
+          srcset: './Backend/BackendPicture.webp',
+          type: 'image/webp',
+        },
+      ],
+    },
+  },
+  {
+    title: 'Electrical Engineer',
+    description: `I get to work on some really cool projects! I'm responsible for
+        developing and creating prototypes of electrical systems, control
+        systems, and embedded systems. Whenever something goes wrong, I get to
+        put on my troubleshooting hat and find solutions to any issues that come
+        up. Safety is a top priority for me, so I always make sure that the
+        electrical systems I work on are both efficient and meet the necessary
+        specifications. Testing is also a big part of my job, making sure
+        everything is working perfectly before it's ready to go.`,
+    image: {
+      alt: 'Breadboard with electrical components',
+      scr: './ElectricalEngineer/ElectricalEngineer.png',
+      height: '100',
+      width: '150',
+      source: [
+        {
+          srcset: './ElectricalEngineer/ElectricalEngineer.webp',
+          type: 'image/webp',
+        },
+      ],
+    },
+  },
+];
 ---
 
-
-<section id="main-skills" class="mt-28">
-
+<section id='main-skills' class='mt-28'>
   <h2>Main Skills</h2>
 
-  <div class="cards">
+  <div class='cards'>
+    {
+      mainSkills.map((item) => {
+        const { image } = item;
 
-    <div class="card border-light dark:border-dark">
-      <svg class="text-fontLightGray2 dark:text-fontDarkGray3" width="100%" height="100%" style="max-width: 150px;" viewBox="0 0 107 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M92.4864 24.0851L59.1649 43.9619V24.0851H92.4864Z" fill="currentColor"/>
-        <path d="M24.0569 10.8727C25.5003 10.8727 26.6704 9.70275 26.6704 8.25933C26.6704 6.8159 25.5003 5.646 24.0569 5.646C22.6135 5.646 21.4434 6.8159 21.4434 8.25933C21.4434 9.70275 22.6135 10.8727 24.0569 10.8727Z" fill="currentColor"/>
-        <path d="M16.6085 10.8727C18.0518 10.8727 19.2219 9.70275 19.2219 8.25933C19.2219 6.8159 18.0518 5.646 16.6085 5.646C15.1651 5.646 13.995 6.8159 13.995 8.25933C13.995 9.70275 15.1651 10.8727 16.6085 10.8727Z" fill="currentColor"/>
-        <path d="M9.16 10.8727C10.6034 10.8727 11.7735 9.70275 11.7735 8.25933C11.7735 6.8159 10.6034 5.646 9.16 5.646C7.71661 5.646 6.54654 6.8159 6.54654 8.25933C6.54654 9.70275 7.71661 10.8727 9.16 10.8727Z" fill="currentColor"/>
-        <path d="M105.538 15.4466V75.1932C105.538 78.01 103.245 80.3042 100.428 80.3042H6.11077C3.29403 80.3042 1 78.01 1 75.1932V6.11067C1 3.29417 3.29403 1 6.11077 1H100.428C103.245 1 105.538 3.29417 105.538 6.11067V15.4466Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M1 15.4469H105.538" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M92.4851 24.0851H59.1631V43.9619H92.4851V24.0851Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M50.1467 24.0851H14.052V71.5194H50.1467V24.0851Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M14.052 71.5194L32.0995 47.8096L50.1467 24.0851" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M14.052 24.0851L32.0995 47.8096L50.1467 71.5194" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M59.1631 43.9619L92.4851 24.0851" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M59.1631 54.9389H92.4851" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M59.1631 64.7827H75.8167" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      
-      <h3>Frontend Developer</h3>
-      <p class="text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description">My goal is to create interfaces that are easy to use and navigate for all types of users.
-        I work hard to make sure that the design is accessible and meets the needs of the target audience. Once the design is finalized, I bring it to life by coding it into a web browser format, making it viewable and interactive for all users.
-      </p>
-      <button class="btn-read-more hover:text-btnLight dark:hover:text-btnDark">
-        <span class="btn-read-more-text">Read more</span>
-        <svg class="btn-read-more-open" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-        <svg class="btn-read-more-close hidden" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-        </svg>        
-      </button>
-    </div>
+        return (
+          <div class='card border-light dark:border-dark'>
+            <picture>
+              {image.source.map((itemSource) => {
+                return (
+                  <source srcset={itemSource.srcset} type={itemSource.type} />
+                );
+              })}
 
-    <div class="card border-light dark:border-dark">
-      <svg class="text-fontLightGray2 dark:text-fontDarkGray3" width="100%" height="100%" style="max-width: 150px;" viewBox="0 0 131 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M112.096 45.4978V83.1725" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M10.6411 83.1722V23.5455C10.6411 19.2441 14.2009 15.6843 18.5024 15.6843H99.7844" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M50.5407 83.1721C50.5407 86.1388 52.9138 87.4735 55.8801 87.4735H66.708C69.6746 87.4735 72.0478 86.1388 72.0478 83.1721H121.292V88.3636C121.292 91.4782 118.77 94 115.655 94H6.63634C3.52152 94 1 91.4782 1 88.3636V83.1721H50.5407Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M34.6703 45.4978H43.57" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24.288 36.5988L28.7377 41.0485L24.288 45.4981" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24.288 63.5937H33.1874" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M39.1193 63.5937H52.4686" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24.288 54.694H39.8622" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M46.537 54.694H55.4363" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M61.3682 54.694H73.2345" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M129.896 23.2489L121.144 28.737L112.096 34.3733L103.197 28.737L94.2974 23.2489L103.197 17.6125L112.096 23.2489H112.245L120.996 17.6125L129.896 23.2489Z" fill="currentColor"/>
-        <path d="M121.144 28.7369L129.896 34.3733L112.096 45.4978L94.2974 34.3733L103.197 28.7369" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M112.096 23.2492V23.1009L112.244 23.2492" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M103.197 17.6125L94.2974 23.2489L103.197 28.737L112.096 34.3733L121.144 28.737L129.896 23.2489L120.996 17.6125" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M103.197 17.6125L94.2974 12.1244L112.096 1L129.896 12.1244L120.996 17.6125L112.245 23.2489H112.096L103.197 17.6125Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg> 
+              <img
+                class='m-auto'
+                height={image.height}
+                width={image.width}
+                src={image.scr}
+                alt={image.alt}
+              />
+            </picture>
 
-      <h3>Backend Developer</h3>
-      <p class="text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description">My focus is to make sure that the behind-the-scenes of the web application is safe, 
-        reliable, and works well. I'm in charge of creating and managing the infrastructure and database that powers the frontend of the web application. 
-        This includes making sure that the web application is scalable and performs efficiently, as well as making sure that the security of the web application is top-notch.
-      </p>
-      <button class="btn-read-more hover:text-btnLight dark:hover:text-btnDark">
-        <span class="btn-read-more-text">Read more</span>
-        <svg class="btn-read-more-open" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-        <svg class="btn-read-more-close hidden" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-        </svg>        
-      </button>
-    </div>
-
-    <div class="card border-light dark:border-dark">
-      <picture>
-        <source srcset="./ElectricalEngineer/ElectricalEngineer.webp" type="image/webp">
-        <img class="m-auto" height="100" width="150" src="./ElectricalEngineer.png" alt="Breadboard with electrical components">
-      </picture>
-      
-      <h3>Electrical Engineer</h3>
-      <p class="text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description">I get to work on some really cool projects! 
-        I'm responsible for developing and creating prototypes of electrical systems, control systems, and embedded systems. 
-        Whenever something goes wrong, I get to put on my troubleshooting hat and find solutions to any issues that come up. 
-        Safety is a top priority for me, so I always make sure that the electrical systems I work on are both efficient and 
-        meet the necessary specifications. Testing is also a big part of my job, making sure everything is working perfectly before it's ready to go.
-      </p>
-      <button class="btn-read-more hover:text-btnLight dark:hover:text-btnDark">
-        <span class="btn-read-more-text">Read more</span>
-        <svg class="btn-read-more-open" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-        <svg class="btn-read-more-close hidden" width="17px" height="17px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-        </svg>        
-      </button>
-    </div>
-
+            <h3>{item.title}</h3>
+            <p class='text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description'>
+              {item.description}
+            </p>
+            <button class='btn-read-more hover:text-btnLight dark:hover:text-btnDark'>
+              <span class='btn-read-more-text'>Read more</span>
+              <svg
+                class='btn-read-more-open'
+                width='17px'
+                height='17px'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke-width='1.5'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M19.5 8.25l-7.5 7.5-7.5-7.5'
+                />
+              </svg>
+              <svg
+                class='btn-read-more-close hidden'
+                width='17px'
+                height='17px'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke-width='1.5'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M4.5 15.75l7.5-7.5 7.5 7.5'
+                />
+              </svg>
+            </button>
+          </div>
+        );
+      })
+    }
   </div>
-
 </section>
 
-
 <style>
-
   h2 {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 600;
@@ -164,45 +195,46 @@
     margin-top: 2rem;
     font-size: 1.4rem;
   }
-
 </style>
 
-
 <script>
-
   const maxNumberCharacters = 200;
-  const descriptionParagraphs = document.querySelectorAll('.main-skills_description')!;
+  const descriptionParagraphs = document.querySelectorAll(
+    '.main-skills_description'
+  )!;
   const descriptionButtons = document.querySelectorAll('.btn-read-more')!;
 
   descriptionParagraphs.forEach((paragraph) => {
-    if(!paragraph.textContent) return;
+    if (!paragraph.textContent) return;
 
-    if(paragraph.textContent.length < maxNumberCharacters){
-
+    if (paragraph.textContent.length < maxNumberCharacters) {
     } else {
       const textContent = paragraph.textContent.slice(0, maxNumberCharacters);
       const moreTextContent = paragraph.textContent.slice(maxNumberCharacters);
-      paragraph.innerHTML = `${textContent}<span class="read-more-dots">...</span><span class="hidden read-more-text">${moreTextContent}</span>`
+      paragraph.innerHTML = `${textContent}<span class="read-more-dots">...</span><span class="hidden read-more-text">${moreTextContent}</span>`;
     }
-  })
+  });
 
   descriptionButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const paragraph = button.parentElement! as HTMLDivElement;
-      if(!paragraph) return;
+      if (!paragraph) return;
 
-      paragraph.querySelector(".read-more-dots")?.classList.toggle('hidden');
-      paragraph.querySelector(".read-more-text")?.classList.toggle('hidden');
-      paragraph.querySelector(".btn-read-more-open")?.classList.toggle('hidden');
-      paragraph.querySelector(".btn-read-more-close")?.classList.toggle('hidden');
+      paragraph.querySelector('.read-more-dots')?.classList.toggle('hidden');
+      paragraph.querySelector('.read-more-text')?.classList.toggle('hidden');
+      paragraph
+        .querySelector('.btn-read-more-open')
+        ?.classList.toggle('hidden');
+      paragraph
+        .querySelector('.btn-read-more-close')
+        ?.classList.toggle('hidden');
 
-      const buttonText = paragraph.querySelector(".btn-read-more-text");
-      if(!buttonText) return;
-      
-      buttonText.textContent?.startsWith("Read more") ? buttonText.textContent = "Read less" :  buttonText.textContent = "Read more"
-    })
-  })
+      const buttonText = paragraph.querySelector('.btn-read-more-text');
+      if (!buttonText) return;
 
-
-
+      buttonText.textContent?.startsWith('Read more')
+        ? (buttonText.textContent = 'Read less')
+        : (buttonText.textContent = 'Read more');
+    });
+  });
 </script>
