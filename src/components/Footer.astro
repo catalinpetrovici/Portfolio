@@ -1,9 +1,9 @@
 ---
-import Telegram from '../svg/socials/Telegram.astro';
-import Discord from '../svg/socials/Discord.astro';
-import Linkedin from '../svg/socials/Linkedin.astro';
-import Github from '../svg/socials/Github.astro';
-import Heart from '../svg/Symbols/Heart.astro';
+import Telegram from '@svg/socials/Telegram.astro';
+import Discord from '@svg/socials/Discord.astro';
+import Linkedin from '@svg/socials/Linkedin.astro';
+import Github from '@svg/socials/Github.astro';
+import Heart from '@svg/Symbols/Heart.astro';
 
 const socialsFooter = [
   {
@@ -80,37 +80,20 @@ const socialsFooter = [
     display: block;
   }
 
-  ul li {
-    margin-bottom: 2rem;
-  }
-
-  ul li a {
-    display: flex;
-    align-items: center;
-    transition: all 200ms ease-in;
-  }
-
-  ul li span {
-    margin-left: 2rem;
-  }
-
   svg {
     border-radius: 10px;
-    display: inline;
+    display: inline-block;
   }
 
-  @media only screen and (min-width: 900px) {
-    ul {
-      display: flex;
-      justify-content: space-between;
-      row-gap: 1rem;
-      column-gap: 5rem;
-      flex-wrap: wrap;
-    }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
 
-    .footer-wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
+  ul li a{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 </style>

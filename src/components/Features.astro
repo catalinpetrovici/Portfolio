@@ -1,15 +1,11 @@
 ---
-import ChevronUp from '../svg/Symbols/ChevronUp.astro';
-import ChevronDown from '../svg/Symbols/ChevronDown.astro';
+import ChevronUp from '@svg/Symbols/ChevronUp.astro';
+import ChevronDown from '@svg/Symbols/ChevronDown.astro';
 
 const mainSkills = [
   {
     title: 'Frontend Developer',
-    description: `My goal is to create interfaces that are easy to use and navigate for
-        all types of users. I work hard to make sure that the design is
-        accessible and meets the needs of the target audience. Once the design
-        is finalized, I bring it to life by coding it into a web browser format,
-        making it viewable and interactive for all users.`,
+    description: `My goal is to create interfaces that are easy to use and navigate for all types of users. I work hard to make sure that the design is accessible and meets the needs of the target audience. Once the design is finalized, I bring it to life by coding it into a web browser format, making it viewable and interactive for all users. Seeing my work come to life and being used by real people drives me forward. Knowing that I've helped make someone's life easier or a little bit better makes all the hard work worth it.`,
     image: {
       alt: 'Website layout picture',
       scr: './Frontend/FrontendPicture.png',
@@ -25,12 +21,7 @@ const mainSkills = [
   },
   {
     title: 'Backend Developer',
-    description: `My focus is to make sure that the behind-the-scenes of the web
-        application is safe, reliable, and works well. I'm in charge of creating
-        and managing the infrastructure and database that powers the frontend of
-        the web application. This includes making sure that the web application
-        is scalable and performs efficiently, as well as making sure that the
-        security of the web application is top-notch.`,
+    description: `My top priority is ensuring that web applications run smoothly and securely behind the scenes. Think of it like building a strong foundation for a house - if the foundation is solid, the rest will be too. I create the "brains" of an app or website, including the database that stores all the data, the server that processes requests and sends responses, and the APIs (application programming interfaces) that allow different parts of the app to talk to each other.`,
     image: {
       alt: 'Laptop with terminal open picture',
       scr: './Backend/BackendPicture.png',
@@ -46,14 +37,7 @@ const mainSkills = [
   },
   {
     title: 'Electrical Engineer',
-    description: `I get to work on some really cool projects! I'm responsible for
-        developing and creating prototypes of electrical systems, control
-        systems, and embedded systems. Whenever something goes wrong, I get to
-        put on my troubleshooting hat and find solutions to any issues that come
-        up. Safety is a top priority for me, so I always make sure that the
-        electrical systems I work on are both efficient and meet the necessary
-        specifications. Testing is also a big part of my job, making sure
-        everything is working perfectly before it's ready to go.`,
+    description: `As an electrical and embedded systems developer, I get to work on some pretty awesome projects! My job is to take designs and turn them into working prototypes, making sure everything is running smoothly from start to finish. Whenever something goes wrong, I get to put on my troubleshooting hat and find solutions to any issues. Safety is my top priority, so I always make sure that the electrical systems I work on are efficient and meet the necessary specifications. Testing is also a big part of my job, ensuring everything works perfectly before it's ready to go.`,
     image: {
       alt: 'Breadboard with electrical components',
       scr: './ElectricalEngineer/ElectricalEngineer.png',
@@ -73,13 +57,13 @@ const mainSkills = [
 <section id='main-skills' class='mt-28'>
   <h2>Main Skills</h2>
 
-  <div class='cards'>
+  <ul class='cards'>
     {
       mainSkills.map((item) => {
         const { image } = item;
 
         return (
-          <div class='card border-light dark:border-dark'>
+          <li class='card border-light dark:border-dark'>
             <picture>
               {image.source.map((itemSource) => {
                 return (
@@ -113,11 +97,11 @@ const mainSkills = [
                 height='17'
               />
             </button>
-          </div>
+          </li>
         );
       })
     }
-  </div>
+  </ul>
 </section>
 
 <style>
@@ -140,7 +124,7 @@ const mainSkills = [
 
   .cards {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -153,7 +137,7 @@ const mainSkills = [
     border: 2px solid;
     border-radius: 10px;
     padding: 2rem 2rem;
-    max-width: 350px;
+    max-width: 35rem;
   }
 
   svg {

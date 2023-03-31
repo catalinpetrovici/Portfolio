@@ -1,0 +1,199 @@
+---
+import JavaScript from '@svg/logoSection/JavaScript.astro';
+import TypeScript from '@svg/logoSection/TypeScriptLogo.astro';
+
+import HTML from '@svg/logoSection/HTML.astro';
+
+import CSS from '@svg/logoSection/CSS.astro';
+import SASS from '@svg/logoSection/Sass.astro';
+import Tailwind from '@svg/logoSection/Tailwind.astro';
+
+import ReactLogo from '@svg/logoSection/ReactLogo.astro';
+import NodeJS from '@svg/projects/NodeJS.astro';
+import Express from '@svg/logoSection/Express.astro';
+
+import NextJS from '@svg/logoSection/NextJS.astro';
+
+import Postgresql from '@svg/logoSection/Postgresql.astro';
+import MongoDB from '@svg/logoSection/MongoDB.astro';
+import Prisma from '@svg/logoSection/Prisma.astro';
+
+import AstroLogo from '@svg/logoSection/AstroLogo.astro';
+
+import Docker from '@svg/logoSection/Docker.astro';
+import Nginx from '@svg/logoSection/Nginx.astro';
+
+import Git from '@svg/logoSection/Git.astro';
+
+import Figma from '@svg/logoSection/Figma.astro';
+
+import Arduino from '@svg/logoSection/Arduino.astro';
+import RasbperryPi from '@svg/logoSection/RasbperryPi.astro';
+
+const logoSection = [
+  // TypeScript
+  {
+    title: 'TypeScript',
+    Logo: { Svg: TypeScript },
+  },
+  // JavaScript
+  {
+    title: 'JavaScript',
+    Logo: { Svg: JavaScript },
+  },
+  // HTML
+  {
+    title: 'HTML',
+    Logo: { Svg: HTML },
+  },
+  // CSS
+  {
+    title: 'CSS',
+    Logo: { Svg: CSS },
+  },
+  // Tailwind
+  {
+    title: 'Tailwind',
+    Logo: { Svg: Tailwind },
+  },
+  // SASS
+  {
+    title: 'SASS',
+    Logo: { Svg: SASS },
+  },
+  // React
+  {
+    title: 'React',
+    Logo: { Svg: ReactLogo },
+  },
+  // NodeJS
+  {
+    title: 'NodeJS',
+    Logo: { Svg: NodeJS },
+  },
+  // Express
+  {
+    title: 'Express',
+    Logo: { Svg: Express },
+  },
+  // NextJS
+  {
+    title: 'NextJS',
+    Logo: { Svg: NextJS },
+  },
+  // Postgresql
+  {
+    title: 'Postgresql',
+    Logo: { Svg: Postgresql },
+  },
+  // MongoDB
+  {
+    title: 'MongoDB',
+    Logo: { Svg: MongoDB },
+  },
+  // Prisma
+  {
+    title: 'Prisma',
+    Logo: { Svg: Prisma },
+  },
+  // Astro
+  {
+    title: 'Astro',
+    Logo: { Svg: AstroLogo },
+  },
+  // Docker
+  {
+    title: 'Docker',
+    Logo: { Svg: Docker },
+  },
+  // Nginx
+  {
+    title: 'Nginx',
+    Logo: { Svg: Nginx },
+  },
+  // Git
+  {
+    title: 'Git',
+    Logo: { Svg: Git },
+  },
+  // Figma
+  {
+    title: 'Figma',
+    Logo: { Svg: Figma },
+  },
+  // RaspberryPi
+  {
+    title: 'RaspberryPi',
+    Logo: { Svg: RasbperryPi },
+  },
+  // Arduino
+  {
+    title: 'Arduino',
+    Logo: { Svg: Arduino },
+  },
+];
+---
+
+<section id='work-together' class='mt-60'>
+  <!-- <h2>Let's work together 👋</h2> -->
+  <ul>
+    {
+      logoSection.map((item) => {
+        const { title, Logo } = item;
+
+        return (
+          <li>
+            <Logo.Svg class='logo' />
+            <span>{title}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  svg {
+    display: inline-block;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+    gap: 2rem 1rem;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  span {
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  }
+
+  .logo {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 5px;
+  }
+
+  @media screen and (min-width: 530px) {
+    .logo {
+      border-radius: 10px;
+      height: 4rem;
+      width: 4rem;
+    }
+
+    ul {
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      gap: 2rem 4rem;
+    }
+
+    ul li {
+      gap: 2rem;
+      min-width: 16rem;
+    }
+  }
+</style>

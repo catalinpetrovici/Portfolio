@@ -5,10 +5,9 @@ import BaseHead from '../components/BaseHead.astro';
 export interface Props {
   title: string;
   description: string;
-  canonicalURL: string;
 }
 
-const { title, description, canonicalURL } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,7 +16,6 @@ const { title, description, canonicalURL } = Astro.props;
     <BaseHead
       title={title}
       description={description}
-      canonicalURL={canonicalURL}
     />
   </head>
   <body class='bg-bgLight text-fontLight dark:bg-bgDark dark:text-fontDark'>
