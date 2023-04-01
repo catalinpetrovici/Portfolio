@@ -1,0 +1,44 @@
+---
+import ContactForm from '@components/preact/ContactForm';
+
+const homeLink = new URL('./', Astro.site).toString();
+const currentLink = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<section>
+  <div class='breadcrumbs'>
+    <span>
+      <a class='hover:text-btnLight dark:hover:text-btnDark' href={homeLink}
+        >Catalin Petrovici</a
+      >
+    </span> &rsaquo;
+    <span>
+      <a class='hover:text-btnLight dark:hover:text-btnDark' href={currentLink}
+        >Reach&nbsp;Out</a
+      >
+    </span>
+  </div>
+
+  <h2 class='mt-6'>Reach Out 👋</h2>
+
+  <div id='main-content'>
+    <ContactForm client:load />
+  </div>
+  
+</section>
+
+<style>
+  .breadcrumbs {
+    font-size: clamp(1.4rem, 2.4vw, 1.6rem);
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    section {
+      margin-top: 8rem;
+    }
+  }
+</style>

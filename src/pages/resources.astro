@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Header from '@components/Header.astro';
+import Resources from '@components/Resources.astro';
+import Footer from '@components/Footer.astro';
 
 const homeLink = new URL('./',Astro.site).toString();
 const navLinks = [
@@ -21,7 +23,9 @@ const navLinksHighlighted = [{ title: `Reach out`, href: `${homeLink}contact` }]
 
   <Header navLinks={navLinks} navLinksHighlighted={navLinksHighlighted}/>
   <main id='main-content'>
- 
+    <Resources/>
+
+    <Footer/>
   </main>
 	
 </Layout>

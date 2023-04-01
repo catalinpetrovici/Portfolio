@@ -1,0 +1,243 @@
+---
+const homeLink = new URL('./', Astro.site).toString();
+const currentLink = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resources = [
+  {
+    title: 'React',
+    categories: [
+      {
+        title: 'General',
+        list: [
+          {
+            title: 'React Docs',
+            href: '',
+          },
+          {
+            title: 'Awsome React Components',
+            href: '',
+          },
+          {
+            title: 'Plausible',
+            href: '',
+          },
+          {
+            title: 'Helpful hooks',
+            href: '',
+          },
+        ],
+      },
+      {
+        title: 'State Management',
+        list: [
+          {
+            title: 'Jotai',
+            href: '',
+          },
+          {
+            title: 'Zustand',
+            href: '',
+          },
+          {
+            title: 'Mobx.js',
+            href: '',
+          },
+        ],
+      },
+      {
+        title: 'Router',
+        list: [
+          {
+            title: 'React Location',
+            href: '',
+          },
+          {
+            title: 'React Router',
+            href: '',
+          },
+        ],
+      },
+      {
+        title: 'Query',
+        list: [
+          {
+            title: 'React Query',
+            href: '',
+          },
+          {
+            title: 'SWR',
+            href: '',
+          },
+        ],
+      },
+      {
+        title: 'Libraries',
+        list: [
+          {
+            title: 'dnd kit',
+            href: '',
+          },
+          {
+            title: 'AutoAnimate',
+            href: '',
+          },
+          {
+            title: 'Recharts',
+            href: '',
+          },
+          {
+            title: 'Nivo Charts',
+            href: '',
+          },
+          {
+            title: 'React Spring',
+            href: '',
+          },
+          {
+            title: 'Framer Motion',
+            href: '',
+          },
+          {
+            title: 'React Flow',
+            href: '',
+          },
+          {
+            title: 'Formik',
+            href: '',
+          },
+          {
+            title: 'Code Mirror 2 - Markdown',
+            href: '',
+          },
+        ],
+      },
+      {
+        title: 'UI Libraries',
+        list: [
+          {
+            title: 'Material UI',
+            href: '',
+          },
+          {
+            title: 'And Design',
+            href: '',
+          },
+          {
+            title: 'Chakra UI',
+            href: '',
+          },
+          {
+            title: 'Headless UI',
+            href: '',
+          },
+          {
+            title: 'CSS Open Props',
+            href: '',
+          },
+          {
+            title: 'Tailwind UI Components',
+            href: '',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'NextJS',
+    categories: [
+      {
+        title: 'General',
+        list: [
+          { title: 'Blitz.js', href: '' },
+          { title: 'NextAuth.js', href: '' },
+          { title: 'tRPC', href: '' },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<section>
+  <div class='breadcrumbs'>
+    <span>
+      <a class='hover:text-btnLight dark:hover:text-btnDark' href={homeLink}
+        >Catalin Petrovici</a
+      >
+    </span> &rsaquo;
+    <span>
+      <a class='hover:text-btnLight dark:hover:text-btnDark' href={currentLink}
+        >Resources</a
+      >
+    </span>
+  </div>
+
+  <h2 class='mt-6'>Resources</h2>
+
+  <div id='main-content' class='flex flex-wrap gap-10 min-h-[20rem] mt-12'>
+    {
+      resources.map((item) => {
+        const { title, categories } = item;
+
+        if(categories.length === 0) return;
+
+        return (
+          <details class='w-full max-w-[35rem]'>
+            <summary>{title}</summary>
+            <div>
+              {categories.map((it) => {
+                const { title, list } = it;
+
+                if(list.length === 0) return;
+
+                return (
+                  <details class='w-full max-w-[35rem]'>
+                    <summary>{title}</summary>
+                    <div>
+                      <ul>
+                        {list.map((a) => {
+                          const { title, href } = a;
+
+                          return (
+                            <li>
+                              <span>- {title}</span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </details>
+                );
+              })}
+            </div>
+          </details>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .breadcrumbs {
+    font-size: clamp(1.4rem, 2.4vw, 1.6rem);
+  }
+
+  details {
+    margin-top: 2rem;
+  }
+
+  details > div {
+    margin-left: 2rem;
+  }
+
+  section {
+    margin-top: 2rem;
+    font-size: clamp(1.6rem, 2.4vw, 1.8rem);
+  }
+
+  @media only screen and (min-width: 1000px) {
+    section {
+      margin-top: 8rem;
+    }
+  }
+</style>
