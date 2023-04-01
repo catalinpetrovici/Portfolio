@@ -6,30 +6,38 @@ import sitemap from '@astrojs/sitemap';
 import { manifest } from './src/utils/manifest';
 import partytown from '@astrojs/partytown';
 
-import preact from "@astrojs/preact";
+import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://192.168.0.111',
-  server: {
-    port: 80,
-    host: true
-  },
-  // site: 'https://catalinpetrovici.com',
-  integrations: [tailwind(), robotsTxt(), sitemap(), partytown({
-    config: {
-      forward: ['dataLayer.push']
-    }
-  }), preact()],
-  vite: {
-    plugins: [VitePWA({
-      registerType: 'autoUpdate',
-      workbox: {
-        // Don't fallback on document based (e.g. `/some-page`) requests
-        // This removes an errant console.log message from showing up.
-        navigateFallback: null
+  // site: 'http://192.168.0.111',
+  // server: {
+  //   port: 80,
+  //   host: true
+  // },
+  site: 'https://catalinpetrovici.com',
+  integrations: [
+    tailwind(),
+    robotsTxt(),
+    sitemap(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push'],
       },
-      manifest
-    })]
-  }
+    }),
+    preact(),
+  ],
+  vite: {
+    plugins: [
+      VitePWA({
+        registerType: 'autoUpdate',
+        workbox: {
+          // Don't fallback on document based (e.g. `/some-page`) requests
+          // This removes an errant console.log message from showing up.
+          navigateFallback: null,
+        },
+        manifest,
+      }),
+    ],
+  },
 });
