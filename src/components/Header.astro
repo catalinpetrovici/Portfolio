@@ -3,18 +3,17 @@ import Logo from '@svg/MainLogo.astro';
 import MenuBars from '@svg/Symbols/MenuBars.astro';
 import MenuClose from '@svg/Symbols/MenuClose.astro';
 
-const navLinks = [
-  { title: 'Projects', href: '#projects' },
-  { title: 'About', href: '#about' },
-  { title: 'Main Skills', href: '#main-skills' },
-];
+const homeLink = new URL('./',Astro.site).toString();
 
-const navLinksHighlighted = [{ title: 'Contact Me', href: '#contact' }];
+export interface Props {
+  navLinks: { title: string; href: string }[];
+  navLinksHighlighted: { title: string; href: string }[];
+}
 
+const { navLinks, navLinksHighlighted } = Astro.props;
 ---
 
 <header class='bg-bgLight text-fontLight dark:bg-bgDark dark:text-fontDark'>
-
   <!-- Skip Navigation Links -->
   <a
     class='skip-nav-link bg-bgLight text-light dark:bg-bgDark dark:text-dark'
@@ -22,9 +21,8 @@ const navLinksHighlighted = [{ title: 'Contact Me', href: '#contact' }];
   >
 
   <div class='header_content_wrapper'>
-
     <!-- Logo -->
-    <a aria-label='home' href='http://192.168.0.111:3000'>
+    <a aria-label='home' href={homeLink}>
       <Logo
         class=''
         ariaLabel='Catalin Petrovici LogoType'
@@ -36,7 +34,7 @@ const navLinksHighlighted = [{ title: 'Contact Me', href: '#contact' }];
     <!-- Mobile Handburger -->
     <button
       type='button'
-      class='block sm:hidden mobile-nav-toggle bg-bgLight text-light dark:bg-bgDark dark:text-dark'
+      class='block md:hidden mobile-nav-toggle bg-bgLight text-light dark:bg-bgDark dark:text-dark'
       aria-controls='primary-navigation'
       aria-label='Toggle navigation'
       aria-expanded='false'
@@ -50,9 +48,9 @@ const navLinksHighlighted = [{ title: 'Contact Me', href: '#contact' }];
     <nav
       id='primary-navigation'
       data-visible='false'
-      class='hidden sm:block primary-navigation bg-bgLight dark:bg-bgDark'
+      class='hidden md:block primary-navigation bg-bgLight dark:bg-bgDark'
     >
-      <ul class='sm:text-fontLightGray2 sm:dark:text-fontDarkGray2'>
+      <ul class='md:text-fontLightGray2 md:dark:text-fontDarkGray2'>
         {
           navLinks.map((item) => {
             const { title, href } = item;
@@ -76,7 +74,7 @@ const navLinksHighlighted = [{ title: 'Contact Me', href: '#contact' }];
             return (
               <li>
                 <a
-                  class='primary-navigation-link contact border-2 bg-btnLight border-btnLight dark:bg-btnDark dark:border-btnDark dark:text-btnFont hover:bg-transparent hover:text-fontLight dark:hover:text-fontDark sm:hover:text-btnLight sm:dark:hover:text-btnDark'
+                  class='primary-navigation-link contact border-2 bg-btnLight border-btnLight dark:bg-btnDark dark:border-btnDark dark:text-btnFont hover:bg-transparent hover:text-fontLight dark:hover:text-fontDark md:hover:text-btnLight md:dark:hover:text-btnDark'
                   href={href}
                 >
                   {title}
@@ -149,7 +147,7 @@ const navLinksHighlighted = [{ title: 'Contact Me', href: '#contact' }];
   }
 
   .primary-navigation[data-visible='false'] {
-    transform: translate(100%);
+    transform: translate(110%);
   }
 
   .primary-navigation-link {
@@ -171,7 +169,7 @@ const navLinksHighlighted = [{ title: 'Contact Me', href: '#contact' }];
     width: auto;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 710px) {
     .primary-navigation {
       padding-top: 0;
       display: flex;

@@ -8,14 +8,25 @@ import LogoSection from '@components/LogoSection.astro';
 import WorkTogether from '@components/WorkTogether.astro';
 import About from '@components/About.astro';
 import Footer from '@components/Footer.astro';
+
+const homeLink = new URL('./',Astro.site).toString();
+console.log(homeLink)
+const navLinks = [
+  { title: 'Projects', href: '#projects' },
+  { title: 'About', href: '#about' },
+  { title: 'Main Skills', href: '#main-skills' },
+  { title: 'Resources', href: '/resources' },
+];
+const navLinksHighlighted = [{ title: 'Reach out', href: '/contact' }];
+
 ---
 
 <Layout
-  title='Software Developer - Catalin Petrovici'
-  description={`Are you looking for a software developer? Explore my portfolio, learn more about my background and let's connect to bring ideas to life whether you want to improve an existing application or build something entirely new!"`}
+  title='Software Developer | Catalin Petrovici'
+  description={`Are you looking for a software developer? Explore my portfolio, learn more about my background and let's connect to bring ideas to life whether you want to improve an existing application or build something entirely new!`}
 >
 
-  <Header />
+  <Header navLinks={navLinks} navLinksHighlighted={navLinksHighlighted}/>
   <main id='main-content'>
     <Hero />
     <Features />
@@ -29,7 +40,5 @@ import Footer from '@components/Footer.astro';
 </Layout>
 
 <style>
-
-
 
 </style>
