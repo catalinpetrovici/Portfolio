@@ -67,6 +67,16 @@ const { title, description } = Astro.props;
         overflow-x: hidden;
         margin: auto;
       }
+
+      main {
+        padding-left: var(--padding-layout-left);
+        padding-right: var(--padding-layout-right);
+      }
+
+      h2 {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-weight: 600;
+      }
     </style>
   </body>
 </html>

@@ -10,33 +10,65 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <meta charset='UTF-8' />
-<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'/>
+<meta
+  name='viewport'
+  content='width=device-width, initial-scale=1, viewport-fit=cover'
+/>
 
 <!-- Favicons. -->
 <link rel='icon' type='image/x-icon' href='./favicon/favicon.ico' />
 <link rel='icon' type='image/svg+xml' href='./favicon/favicon.svg' />
 <!-- <link rel='apple-touch-icon' href='./apple-touch-icon.png' /> -->
 <link rel='mask-icon' href='./safari-pinned-tab.svg' color='#0A0915' />
-<link rel="icon" sizes="16x16 32x32 64x64" href="./favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="196x196" href="./favicon/favicon-192.png">
-<link rel="icon" type="image/png" sizes="160x160" href="./favicon/favicon-160.png">
-<link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96.png">
-<link rel="icon" type="image/png" sizes="64x64" href="./favicon/favicon-64.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16.png">
-<link rel="apple-touch-icon" href="./favicon/favicon-57.png">
-<link rel="apple-touch-icon" sizes="114x114" href="./favicon/favicon-114.png">
-<link rel="apple-touch-icon" sizes="72x72" href="./favicon/favicon-72.png">
-<link rel="apple-touch-icon" sizes="144x144" href="./favicon/favicon-144.png">
-<link rel="apple-touch-icon" sizes="60x60" href="./favicon/favicon-60.png">
-<link rel="apple-touch-icon" sizes="120x120" href="./favicon/favicon-120.png">
-<link rel="apple-touch-icon" sizes="76x76" href="./favicon/favicon-76.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./favicon/favicon-152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./favicon/favicon-180.png">
-<meta name="msapplication-TileColor" content="#FFFFFF">
-<meta name="msapplication-TileImage" content="./favicon/favicon-144.png">
-<meta name="msapplication-config" content="./favicon/browserconfig.xml">
-
+<link rel='icon' sizes='16x16 32x32 64x64' href='./favicon/favicon.ico' />
+<link
+  rel='icon'
+  type='image/png'
+  sizes='196x196'
+  href='./favicon/favicon-192.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='160x160'
+  href='./favicon/favicon-160.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='96x96'
+  href='./favicon/favicon-96.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='64x64'
+  href='./favicon/favicon-64.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='32x32'
+  href='./favicon/favicon-32.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='16x16'
+  href='./favicon/favicon-16.png'
+/>
+<link rel='apple-touch-icon' href='./favicon/favicon-57.png' />
+<link rel='apple-touch-icon' sizes='114x114' href='./favicon/favicon-114.png' />
+<link rel='apple-touch-icon' sizes='72x72' href='./favicon/favicon-72.png' />
+<link rel='apple-touch-icon' sizes='144x144' href='./favicon/favicon-144.png' />
+<link rel='apple-touch-icon' sizes='60x60' href='./favicon/favicon-60.png' />
+<link rel='apple-touch-icon' sizes='120x120' href='./favicon/favicon-120.png' />
+<link rel='apple-touch-icon' sizes='76x76' href='./favicon/favicon-76.png' />
+<link rel='apple-touch-icon' sizes='152x152' href='./favicon/favicon-152.png' />
+<link rel='apple-touch-icon' sizes='180x180' href='./favicon/favicon-180.png' />
+<meta name='msapplication-TileColor' content='#FFFFFF' />
+<meta name='msapplication-TileImage' content='./favicon/favicon-144.png' />
+<meta name='msapplication-config' content='./favicon/browserconfig.xml' />
 
 <title>{title}</title>
 <meta name='title' content={title} />
@@ -46,7 +78,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 <link rel='canonical' href={canonicalURL} />
 <link rel='sitemap' href='/sitemap.xml' />
-<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta
+  name='robots'
+  content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+/>
 
 <!-- Service worker registration. -->
 <script is:inline src='/registerSW.js'></script>
@@ -69,7 +104,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 <meta property='twitter:image' content={image} />
 
 <!-- Design -->
-<meta name='apple-mobile-web-app-title' content={title}/>
+<meta name='apple-mobile-web-app-title' content={title} />
 <meta name='application-name' content={title} />
 <meta name='apple-mobile-web-app-capable' content='yes' />
 <meta name='apple-mobile-web-app-status-bar-style' content='default' />
@@ -77,3 +112,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 <meta name='apple-touch-fullscreen' content='yes' />
 <meta name='theme-color' content='#ffffff' />
 
+<!-- Google tag (gtag.js) -->
+<script
+  type='text/partytown'
+  async
+  src='https://www.googletagmanager.com/gtag/js?id=G-4EWXZK0CHJ'
+></script>
+<script type='text/partytown'>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-4EWXZK0CHJ');
+</script>

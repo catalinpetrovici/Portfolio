@@ -239,10 +239,10 @@ const projects = [
   //   title: 'NodeJS',
   //   subtitle: 'Collection',
   //   href: 'https://github.com/catalinpetrovici24/NodeJS_Projects',
-  //   description: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-  //   Aenean commodo ligula eget dolor. Aenean massa. 
-  //   Cum sociis natoque penatibus et magnis dis parturient montes, 
-  //   nascetur ridiculus mus. Donec quam felis, ultricies nec, 
+  //   description: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  //   Aenean commodo ligula eget dolor. Aenean massa.
+  //   Cum sociis natoque penatibus et magnis dis parturient montes,
+  //   nascetur ridiculus mus. Donec quam felis, ultricies nec,
   //   pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.`,
   //   Logo: {
   //     Svg: NodeJSLogo,
@@ -310,14 +310,20 @@ const projects = [
               {description}
             </p>
             <a href={href} class='hover:text-btnLight dark:hover:text-btnDark'>
-              <ArrowRight/>
+              <ArrowRight />
               View Project
             </a>
           </div>
-          {image.source.length ? (
+          {Object.keys(image).length !== 0 ? (
             <picture slot='image-showcase'>
               {image.source.map((imageItem) => {
                 if (!imageItem) return;
+
+                if (imageItem.media.length < 1) {
+                  return (
+                    <source srcset={imageItem.srcset} type={imageItem.type} />
+                  );
+                }
 
                 return (
                   <source
@@ -345,10 +351,6 @@ const projects = [
 </section>
 
 <style>
-  h2 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 600;
-  }
 
   img {
     width: 100%;

@@ -5,10 +5,21 @@ import { VitePWA } from 'vite-plugin-pwa';
 import sitemap from '@astrojs/sitemap';
 import { manifest } from './src/utils/manifest';
 
+import partytown from '@astrojs/partytown';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://catalinpetrovici.com',
-  integrations: [tailwind(), robotsTxt(), sitemap()],
+  integrations: [
+    tailwind(),
+    robotsTxt(),
+    sitemap(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push'],
+      },
+    }),
+  ],
   vite: {
     plugins: [
       VitePWA({
