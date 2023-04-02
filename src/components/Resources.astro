@@ -4,6 +4,32 @@ const currentLink = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resources = [
   {
+    title: `People`,
+    categories: [
+      {
+        title: 'Tech',
+        list: [
+          { title: 'ThePrimeagen', href: '' },
+          { title: 'Theo Browne - T3', href: '' },
+          { title: 'Jack Herrington', href: '' },
+          { title: 'Kevin Powell', href: '' },
+          { title: 'Matt Pocock', href: '' },
+          { title: 'Learn With Jason', href: '' },
+          { title: 'Viorel Mocanu', href: '' },
+          { title: 'Today Software Magazine - Ovidiu Mățan', href: '' },
+          { title: 'James Q Quick', href: '' },
+          { title: 'Coding Garden', href: '' },
+          { title: 'Web Dev Cody', href: '' },
+          { title: 'A Life Engineered', href: '' },
+          { title: 'NetworkChuck', href: '' },
+          { title: 'Fireship', href: '' },
+          { title: 'Development Factory', href: '' },
+          { title: 'Vlog de IT', href: '' },
+        ],
+      },
+    ],
+  },
+  {
     title: 'React',
     categories: [
       {
@@ -109,6 +135,14 @@ const resources = [
             title: 'Code Mirror 2 - Markdown',
             href: '',
           },
+          {
+            title: 'class variance authority',
+            href: '',
+          },
+          {
+            title: 'lucide',
+            href: '',
+          },
         ],
       },
       {
@@ -116,6 +150,10 @@ const resources = [
         list: [
           {
             title: 'Material UI',
+            href: '',
+          },
+          {
+            title: 'Radix UI',
             href: '',
           },
           {
@@ -151,6 +189,7 @@ const resources = [
           { title: 'Blitz.js', href: '' },
           { title: 'NextAuth.js', href: '' },
           { title: 'tRPC', href: '' },
+          { title: 'class variance authority', href: '' },
         ],
       },
     ],
@@ -179,7 +218,7 @@ const resources = [
       resources.map((item) => {
         const { title, categories } = item;
 
-        if(categories.length === 0) return;
+        if (categories.length === 0) return;
 
         return (
           <details class='w-full max-w-[35rem]'>
@@ -188,7 +227,7 @@ const resources = [
               {categories.map((it) => {
                 const { title, list } = it;
 
-                if(list.length === 0) return;
+                if (list.length === 0) return;
 
                 return (
                   <details class='w-full max-w-[35rem]'>
