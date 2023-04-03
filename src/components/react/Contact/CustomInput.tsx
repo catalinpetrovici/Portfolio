@@ -29,7 +29,7 @@ const CustomSelect = ({
           ) : null}
         </AnimatePresence>
       </div>
-      <select {...field} className={className}>
+      <select id={props.id || props.name} {...field} className={className}>
         {children}
       </select>
     </div>
@@ -60,7 +60,7 @@ const CustomInput = ({
           ) : null}{' '}
         </AnimatePresence>
       </div>
-      <input className={className} {...field} />
+      <input id={props.id || props.name} className={className} {...field} />
     </>
   );
 };
@@ -87,7 +87,7 @@ const CustomTextarea = ({
           ) : null}
         </AnimatePresence>
       </div>
-      <textarea className={className} {...field} />
+      <textarea id={props.id || props.name} className={className} {...field} />
     </>
   );
 };

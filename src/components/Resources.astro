@@ -225,7 +225,7 @@ const resources = [
         if (categories.length === 0) return;
 
         return (
-          <details class='w-full max-w-[35rem]'>
+          <details class='details-parent w-full max-w-[35rem]'>
             <summary>{title}</summary>
             <div>
               {categories.map((it) => {
@@ -261,6 +261,27 @@ const resources = [
 </section>
 
 <style>
+
+  @keyframes open {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
+
+  /* closing animation */
+  @keyframes close {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+  }
+
+  details[open] summary~* {
+    animation: open 1s;
+  }
+
+  /* closing class */
+  details.closing summary~* {
+    animation: close 1s;
+  }
+
   .breadcrumbs {
     font-size: clamp(1.4rem, 2.4vw, 1.6rem);
   }
@@ -284,3 +305,4 @@ const resources = [
     }
   }
 </style>
+

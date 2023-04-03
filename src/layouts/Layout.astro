@@ -13,6 +13,10 @@ const { title, description } = Astro.props;
 <!DOCTYPE html>
 <html lang='en'>
   <head>
+    <!-- Service worker registration. -->
+    <script type='text/partytown' is:inline src='/registerSW.js'></script>
+    <link rel='manifest' href='/manifest.webmanifest' />
+    
     <BaseHead
       title={title}
       description={description}
