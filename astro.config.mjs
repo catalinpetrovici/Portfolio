@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 import { manifest } from './src/utils/manifest';
 import partytown from '@astrojs/partytown';
 
-import preact from '@astrojs/preact';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,7 +25,7 @@ export default defineConfig({
         forward: ['dataLayer.push'],
       },
     }),
-    preact(),
+    react(),
   ],
   vite: {
     plugins: [

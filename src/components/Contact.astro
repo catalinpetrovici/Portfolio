@@ -1,5 +1,5 @@
 ---
-import ContactForm from '@components/preact/ContactForm';
+import ContactFormik from '@components/react/Contact/ContactForm';
 
 const homeLink = new URL('./', Astro.site).toString();
 const currentLink = new URL(Astro.url.pathname, Astro.site).toString();
@@ -22,7 +22,7 @@ const currentLink = new URL(Astro.url.pathname, Astro.site).toString();
   <h2 class='mt-6'>Reach Out 👋</h2>
 
   <div id='main-content'>
-    <ContactForm client:load />
+    <ContactFormik client:load />
   </div>
   
 </section>
