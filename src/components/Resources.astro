@@ -100,10 +100,6 @@ const resources = [
         title: 'Libraries',
         list: [
           {
-            title: 'React Aria',
-            href: '',
-          },
-          {
             title: 'dnd kit',
             href: '',
           },
@@ -136,6 +132,10 @@ const resources = [
             href: '',
           },
           {
+            title: 'React Select',
+            href: '',
+          },
+          {
             title: 'Code Mirror 2 - Markdown',
             href: '',
           },
@@ -157,11 +157,15 @@ const resources = [
             href: '',
           },
           {
+            title: 'React Aria - Adobe',
+            href: '',
+          },
+          {
             title: 'Radix UI',
             href: '',
           },
           {
-            title: 'And Design',
+            title: 'Ant Design',
             href: '',
           },
           {
@@ -178,6 +182,14 @@ const resources = [
           },
           {
             title: 'Tailwind UI Components',
+            href: '',
+          },
+          {
+            title: 'Reach UI',
+            href: '',
+          },
+          {
+            title: 'Shadcn UI',
             href: '',
           },
         ],
@@ -261,24 +273,31 @@ const resources = [
 </section>
 
 <style>
-
   @keyframes open {
-    0% { opacity: 0 }
-    100% { opacity: 1 }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   /* closing animation */
   @keyframes close {
-    0% { opacity: 1 }
-    100% { opacity: 0 }
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
-  details[open] summary~* {
+  details[open] summary ~ * {
     animation: open 1s;
   }
 
   /* closing class */
-  details.closing summary~* {
+  details.closing summary ~ * {
     animation: close 1s;
   }
 
@@ -305,4 +324,3 @@ const resources = [
     }
   }
 </style>
-
