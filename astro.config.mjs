@@ -39,5 +39,12 @@ export default defineConfig({
         manifest,
       }),
     ],
+    // build: {
+    //   rollupOptions: {
+    //     output: {
+    //       entryFileNames: '[name]-[hash].js',
+    //     },
+    //   },
+    // },
   },
 });
