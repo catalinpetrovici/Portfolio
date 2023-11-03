@@ -3,7 +3,7 @@ import Logo from '@svg/MainLogo.astro';
 import MenuBars from '@svg/Symbols/MenuBars.astro';
 import MenuClose from '@svg/Symbols/MenuClose.astro';
 
-const homeLink = new URL('./',Astro.site).toString();
+const homeLink = new URL('./', Astro.site).toString();
 
 export interface Props {
   navLinks: { title: string; href: string }[];
@@ -41,14 +41,14 @@ const { navLinks, navLinksHighlighted } = Astro.props;
     >
       <MenuBars class='mobile-menu-bars' height='40' width='40' />
       <MenuClose class='hidden mobile-menu-close' height='40' width='40' />
-      <span class='mobile-menu-text sr-only'>Menu</span>
+      <span class='sr-only mobile-menu-text'>Menu</span>
     </button>
 
     <!-- Navigation -->
     <nav
       id='primary-navigation'
       data-visible='false'
-      aria-label="Primary Navigation"
+      aria-label='Primary Navigation'
       class='hidden md:block primary-navigation bg-bgLight dark:bg-bgDark'
     >
       <ul class='md:text-fontLightGray2 md:dark:text-fontDarkGray2'>
@@ -59,7 +59,7 @@ const { navLinks, navLinksHighlighted } = Astro.props;
             return (
               <li>
                 <a
-                  class='primary-navigation-link border-b-2 border-fontDarkGray4 hover:bg-inherit hover:text-btnLight dark:hover:text-btnDark'
+                  class='border-b-2 primary-navigation-link border-fontDarkGray4 hover:bg-inherit hover:text-btnLight dark:hover:text-btnDark'
                   href={href}
                 >
                   {title}
@@ -75,7 +75,7 @@ const { navLinks, navLinksHighlighted } = Astro.props;
             return (
               <li>
                 <a
-                  class='primary-navigation-link contact border-2 bg-btnLight border-btnLight dark:bg-btnDark dark:border-btnDark dark:text-btnFont hover:bg-transparent hover:text-fontLight dark:hover:text-fontDark md:hover:text-btnLight md:dark:hover:text-btnDark'
+                  class='border-2 primary-navigation-link contact bg-btnLight border-btnLight dark:bg-btnDark dark:border-btnDark dark:text-btnFont hover:bg-transparent hover:text-fontLight dark:hover:text-fontDark md:hover:text-btnLight md:dark:hover:text-btnDark'
                   href={href}
                 >
                   {title}

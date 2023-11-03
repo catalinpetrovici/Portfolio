@@ -4,32 +4,28 @@ import Header from '@components/Header.astro';
 import Resources from '@components/Resources.astro';
 import Footer from '@components/Footer.astro';
 
-const homeLink = new URL('./',Astro.site).toString();
+const homeLink = new URL('./', Astro.site).toString();
 const navLinks = [
   { title: `Projects`, href: `${homeLink}#projects` },
   { title: `About`, href: `${homeLink}#about` },
   { title: `Main Skills`, href: `${homeLink}#main-skills` },
   { title: `Resources`, href: `${homeLink}resources` },
 ];
-const navLinksHighlighted = [{ title: `Reach out`, href: `${homeLink}contact` }];
-
+const navLinksHighlighted = [
+  { title: `Reach out`, href: `${homeLink}contact` },
+];
 ---
-
 
 <Layout
   title='Resources | Catalin Petrovici'
   description={`Are you looking for a software developer? Explore my portfolio, learn more about my background and let's connect to bring ideas to life whether you want to improve an existing application or build something entirely new!`}
 >
-
-  <Header navLinks={navLinks} navLinksHighlighted={navLinksHighlighted}/>
+  <Header navLinks={navLinks} navLinksHighlighted={navLinksHighlighted} />
   <main id='main-content'>
-    <Resources/>
+    <Resources />
 
-    <Footer/>
+    <Footer />
   </main>
-	
 </Layout>
 
-<style>
-
-</style>
+<style></style>

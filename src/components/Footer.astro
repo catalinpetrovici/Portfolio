@@ -8,7 +8,7 @@ import Heart from '@svg/Symbols/Heart.astro';
 const socialsFooter = [
   {
     social: 'Github',
-    href: 'https://github.com/catalinpetrovici24',
+    href: 'https://github.com/catalinpetrovici',
     Logo: { Svg: Github },
     account: 'catalinpetrovici24',
   },
@@ -58,7 +58,7 @@ const socialsFooter = [
   <div class='footer-wrapper dark:text-fontDarkGray5'>
     <div>
       <span>Thank you for visiting me!</span>
-      <span>Build with&nbsp;{<Heart/>}&nbsp;using: Astro</span>
+      <span>Build with&nbsp;{(<Heart />)}&nbsp;using: Astro</span>
     </div>
     <span>Copyright © 2023 All rights reserved.</span>
   </div>
@@ -91,7 +91,7 @@ const socialsFooter = [
     gap: 2rem;
   }
 
-  ul li a{
+  ul li a {
     display: flex;
     align-items: center;
     gap: 2rem;

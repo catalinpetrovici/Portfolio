@@ -6,7 +6,7 @@ import Github from '@svg/socials/Github.astro';
 const socialsAbout = [
   {
     social: 'Github',
-    href: 'https://github.com/catalinpetrovici24',
+    href: 'https://github.com/catalinpetrovici',
     Logo: { Svg: Github },
   },
   {
@@ -55,7 +55,7 @@ const socialsAbout = [
       <a
         rel='external noopener'
         href='https://drive.google.com/file/d/11uuJTltMuXixySRoEXCEq45ieA2hXEFp/view?usp=share_link'
-        class='btn-cv border-2 border-btnLight bg-btnLight text-btnFont hover:bg-transparent dark:bg-btnDark dark:border-btnDark dark:hover:text-dark'
+        class='border-2 btn-cv border-btnLight bg-btnLight text-btnFont hover:bg-transparent dark:bg-btnDark dark:border-btnDark dark:hover:text-dark'
         >View CV</a
       >
       <ul>
@@ -69,8 +69,8 @@ const socialsAbout = [
                   class='hover:text-btnLight dark:hover:text-btnDark'
                 >
                   <span class='sr-only'>{social}</span>
-                  <Logo.Svg class="rounded-2xl"/>
-                </a>  
+                  <Logo.Svg class='rounded-2xl' />
+                </a>
               </li>
             );
           })

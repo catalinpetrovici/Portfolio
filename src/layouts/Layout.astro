@@ -16,11 +16,8 @@ const { title, description } = Astro.props;
     <!-- Service worker registration. -->
     <script type='text/partytown' is:inline src='/registerSW.js'></script>
     <link rel='manifest' href='/manifest.webmanifest' />
-    
-    <BaseHead
-      title={title}
-      description={description}
-    />
+
+    <BaseHead title={title} description={description} />
   </head>
   <body class='bg-bgLight text-fontLight dark:bg-bgDark dark:text-fontDark'>
     <slot />
@@ -53,7 +50,7 @@ const { title, description } = Astro.props;
       }
 
       html {
-        font-family: 'IBM Plex Mono', system-ui, sans-serif;
+        font-display: optional;
         font-size: 62.5%;
         scroll-behavior: smooth;
         scroll-padding-top: var(--header-height, 65px);

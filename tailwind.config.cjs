@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
@@ -7,6 +9,14 @@ module.exports = {
       md: '710px',
     },
     extend: {
+      fontFamily: {
+        sans: [
+          'IBM Plex Mono',
+          'Open Sans',
+          'sans-serif',
+          ...defaultTheme.fontFamily.sans,
+        ],
+      },
       colors: {
         bgDark: 'var(--bg-color-dark)',
         fontDark: 'var(--font-color-dark)',
