@@ -268,7 +268,10 @@ const resources = [
     categories: [
       {
         title: 'General',
-        list: [{ title: 'node-cache', href: '' }],
+        list: [
+          { title: 'node-cache', href: '' },
+          { title: 'lucia', href: '' },
+        ],
       },
     ],
   },
@@ -277,7 +280,10 @@ const resources = [
     categories: [
       {
         title: 'General',
-        list: [{ title: 'localforage', href: '' }],
+        list: [
+          { title: 'localforage', href: '' },
+          { title: 'Knip', href: '' },
+        ],
       },
     ],
   },
@@ -294,22 +300,22 @@ const resources = [
 ---
 
 <section>
-  <div class='breadcrumbs'>
+  <div class="breadcrumbs">
     <span>
-      <a class='hover:text-btnLight dark:hover:text-btnDark' href={homeLink}
+      <a class="hover:text-btnLight dark:hover:text-btnDark" href={homeLink}
         >Catalin Petrovici</a
       >
     </span> &rsaquo;
     <span>
-      <a class='hover:text-btnLight dark:hover:text-btnDark' href={currentLink}
+      <a class="hover:text-btnLight dark:hover:text-btnDark" href={currentLink}
         >Resources</a
       >
     </span>
   </div>
 
-  <h2 class='mt-6'>Resources</h2>
+  <h2 class="mt-6">Resources</h2>
 
-  <div id='main-content' class='flex flex-wrap gap-10 min-h-[20rem] mt-12'>
+  <div id="main-content" class="flex flex-wrap gap-10 min-h-[20rem] mt-12">
     {
       resources.map((item) => {
         const { title, categories } = item;
@@ -317,7 +323,7 @@ const resources = [
         if (categories.length === 0) return;
 
         return (
-          <details class='details-parent w-full max-w-[35rem]'>
+          <details class="details-parent w-full max-w-[35rem]">
             <summary>{title}</summary>
             <div>
               {categories.map((it) => {
@@ -326,7 +332,7 @@ const resources = [
                 if (list.length === 0) return;
 
                 return (
-                  <details class='w-full max-w-[35rem]'>
+                  <details class="w-full max-w-[35rem]">
                     <summary>{title}</summary>
                     <div>
                       <ul>
