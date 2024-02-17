@@ -7,6 +7,7 @@ export interface Props {
 const { title, description } = Astro.props;
 const image = new URL('./catalin-petrovici-og-image.jpg', Astro.site);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const isGAEnabled = false;
 ---
 
 <meta charset="UTF-8" />
@@ -108,8 +109,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 <meta name="apple-touch-fullscreen" content="yes" />
 <meta name="theme-color" content="#ffffff" />
 
-<!-- Google tag (gtag.js) -->
-<!-- <script
+{isGAEnabled && <script
   type='text/partytown'
   async
   src='https://www.googletagmanager.com/gtag/js?id=G-4EWXZK0CHJ'></script>
@@ -121,7 +121,7 @@ function gtag() {
 gtag('js', new Date());
 
 gtag('config', 'G-4EWXZK0CHJ');
-</script> -->
+</script>}
 
 <script
   defer
