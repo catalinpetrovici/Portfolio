@@ -10,16 +10,17 @@ export interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang='en'>
+<!doctype html>
+<html lang="en" translate="no" class="notranslate">
   <head>
-    <!-- Service worker registration. -->
-    <script type='text/partytown' is:inline src='/registerSW.js'></script>
-    <link rel='manifest' href='/manifest.webmanifest' />
-
     <BaseHead title={title} description={description} />
+
+    <meta name="google" content="notranslate" />
+    <!-- Service worker registration. -->
+    <script type="text/partytown" is:inline src="/registerSW.js"></script>
+    <link rel="manifest" href="/manifest.webmanifest" />
   </head>
-  <body class='bg-bgLight text-fontLight dark:bg-bgDark dark:text-fontDark'>
+  <body class="bg-bgLight text-fontLight dark:bg-bgDark dark:text-fontDark">
     <slot />
     <style is:global>
       :root {
@@ -57,8 +58,15 @@ const { title, description } = Astro.props;
       }
 
       code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
       }
 
       body {

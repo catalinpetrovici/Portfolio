@@ -14,7 +14,7 @@ const projects = [
     title: 'CaierSpace.com',
     subtitle: 'Website',
     href: 'https://caierspace.com',
-    description: `I designed and developed a website for a therapist to showcase their services and make it easy for potential clients to schedule appointments and get in touch. The website features a calming colour scheme, straightforward navigation, and engaging content that reflects the therapist's compassionate and supportive approach to mental health care. It also incorporates the latest web design trends and technologies to ensure a seamless user experience on desktop and mobile devices. The website is user-friendly and reflects the therapist's unique brand and personality.`,
+    description: `I developed a psychology website aimed at showcasing their services, simplifying the process for potential clients to book appointments and contact them. The site uses a calming color scheme, easy navigation, and content that highlights the psychologist's supportive approach to mental health. It integrates current web design trends and technology, ensuring it operates smoothly on both desktop and mobile devices. This makes the website not only user-friendly but also a true representation of the psychologist's unique identity and approach.`,
     Logo: {
       Svg: CaierSpaceLogo,
     },
@@ -69,11 +69,11 @@ const projects = [
     title: 'Home Energy Management System',
     subtitle: 'Publication',
     href: 'https://ieeexplore.ieee.org/document/9959793',
-    description: `I built a practical solution for managing home energy. 
-    The system lets you remotely control your devices, monitor your power consumption, 
-    monitor solar production and performance, and even forecast the future behaviour 
-    of equipment and energy indicators, making it an efficient and effective solution 
-    for managing energy usage in the home. It's easy to use and integrates open-source 
+    description: `I built a practical solution for managing home energy.
+    The system lets you remotely control your devices, monitor your power consumption,
+    monitor solar production and performance, and even forecast the future behaviour
+    of equipment and energy indicators, making it an efficient and effective solution
+    for managing energy usage in the home. It's easy to use and integrates open-source
     software for added flexibility.`,
     Logo: {
       Svg: HemsLogo,
@@ -124,11 +124,11 @@ const projects = [
     title: 'Smart Home, Raspberry Pi, Microcontrollers, MQTT',
     subTitle: 'Bachelor Degree',
     href: 'https://www.youtube.com/watch?v=MpF0Z2glEeM',
-    description: `Lorem ipsum dolor sit amet consectetur adipiscing elit mollis sapien, 
+    description: `Lorem ipsum dolor sit amet consectetur adipiscing elit mollis sapien,
     non congue dictumst a at sollicitudin ornare. Volutpat ultricies semper lobortis curae
-    id integer litora fusce interdum, bibendum inceptos sem netus malesuada euismod cras 
+    id integer litora fusce interdum, bibendum inceptos sem netus malesuada euismod cras
     ut molestie, mi nec viverra senectus nostra tortor ultrices etiam. Phasellus bibendum
-    erat pharetra molestie mi accumsan, class iaculis laoreet sapien lobortis, est velit 
+    erat pharetra molestie mi accumsan, class iaculis laoreet sapien lobortis, est velit
     leo facilisi faucibus.`,
     Logo: {
       Svg: SmartHomeLogo,
@@ -184,10 +184,10 @@ const projects = [
     title: 'React',
     subtitle: 'Collection',
     href: 'https://github.com/catalinpetrovici/React_Projects/tree/main/Medium%20Projects',
-    description: `I have created a repository containing multiple React apps that showcase my skills 
-    and expertise in building dynamic and responsive web applications. From simple to complex UI 
-    components and interactive user experiences, these projects demonstrate my ability to develop 
-    various use cases, even challenging apps. Whether you're a potential employer or a fellow developer, 
+    description: `I have created a repository containing multiple React apps that showcase my skills
+    and expertise in building dynamic and responsive web applications. From simple to complex UI
+    components and interactive user experiences, these projects demonstrate my ability to develop
+    various use cases, even challenging apps. Whether you're a potential employer or a fellow developer,
     I invite you to check out my repo and see what I can do with React!`,
     Logo: {
       Svg: ReactLogo,
@@ -290,33 +290,33 @@ const projects = [
 ];
 ---
 
-<section id='projects' class='mt-28'>
+<section id="projects" class="mt-28">
   <h2>Projects</h2>
   {
     projects.map((item) => {
       const { title, subtitle, href, description, Logo, image } = item;
       return (
-        <article class='project'>
-          <div class='description'>
-            <div class='project-heading'>
+        <article class="project">
+          <div class="description">
+            <div class="project-heading">
               <Logo.Svg />
-              <div class='ml-8'>
-                <span class='subtitle text-fontLightGray2 dark:text-fontDarkGray4'>
+              <div class="ml-8">
+                <span class="subtitle text-fontLightGray2 dark:text-fontDarkGray4">
                   {subtitle}
                 </span>
                 <h3>{title}</h3>
               </div>
             </div>
-            <p class='text-fontLightGray2 dark:text-fontDarkGray3'>
+            <p class="text-fontLightGray2 dark:text-fontDarkGray3">
               {description}
             </p>
-            <a href={href} class='hover:text-btnLight dark:hover:text-btnDark'>
+            <a href={href} class="hover:text-btnLight dark:hover:text-btnDark">
               <ArrowRight />
               View Project
             </a>
           </div>
           {Object.keys(image).length !== 0 ? (
-            <picture slot='image-showcase'>
+            <picture slot="image-showcase">
               {image.source.map((imageItem) => {
                 if (!imageItem) return;
 
@@ -339,7 +339,7 @@ const projects = [
                 height={image.height}
                 src={image.scr}
                 alt={image.alt}
-                loading='lazy'
+                loading="lazy"
               />
             </picture>
           ) : (
