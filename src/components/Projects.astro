@@ -4,12 +4,10 @@ import HemsLogo from '@svg/projects/Hems.astro';
 import SmartHomeLogo from '@svg/projects/SmartHome.astro';
 import ReactLogo from '@svg/projects/React.astro';
 import NodeJSLogo from '@svg/projects/NodeJS.astro';
+import AWSLogo from '@svg/logoSection/AWS.astro';
 import ArrowRight from '@svg/Symbols/ArrowRight.astro';
 
 const projects = [
-  //
-  // CaierSpace
-  //
   {
     title: 'CaierSpace.com',
     subtitle: 'Website',
@@ -62,9 +60,6 @@ const projects = [
       ],
     },
   },
-  //
-  // Hems
-  //
   {
     title: 'Home Energy Management System',
     subtitle: 'Publication',
@@ -117,19 +112,16 @@ const projects = [
       ],
     },
   },
-  //
-  // SmartHome
-  //
   {
     title: 'Smart Home, Raspberry Pi, Microcontrollers, MQTT',
-    subTitle: 'Bachelor Degree',
+    subtitle: 'Bachelor Degree',
     href: 'https://www.youtube.com/watch?v=MpF0Z2glEeM',
-    description: `Lorem ipsum dolor sit amet consectetur adipiscing elit mollis sapien,
-    non congue dictumst a at sollicitudin ornare. Volutpat ultricies semper lobortis curae
-    id integer litora fusce interdum, bibendum inceptos sem netus malesuada euismod cras
-    ut molestie, mi nec viverra senectus nostra tortor ultrices etiam. Phasellus bibendum
-    erat pharetra molestie mi accumsan, class iaculis laoreet sapien lobortis, est velit
-    leo facilisi faucibus.`,
+    description: `For my bachelor's degree I built a smart home system from the ground up.
+    Microcontrollers spread around the house read sensors and switch devices, and they
+    talk to a Raspberry Pi hub over MQTT, a lightweight messaging protocol made for IoT.
+    A web dashboard shows live readings and lets you control everything from your phone
+    or computer. The project taught me how hardware, networking and software fit together
+    in a real, working system.`,
     Logo: {
       Svg: SmartHomeLogo,
     },
@@ -177,116 +169,45 @@ const projects = [
       ],
     },
   },
-  //
-  // React
-  //
   {
-    title: 'React',
-    subtitle: 'Collection',
-    href: 'https://github.com/catalinpetrovici/React_Projects/tree/main/Medium%20Projects',
-    description: `I have created a repository containing multiple React apps that showcase my skills
-    and expertise in building dynamic and responsive web applications. From simple to complex UI
-    components and interactive user experiences, these projects demonstrate my ability to develop
-    various use cases, even challenging apps. Whether you're a potential employer or a fellow developer,
-    I invite you to check out my repo and see what I can do with React!`,
+    title: 'Home Dashboard',
+    subtitle: 'Full Stack App',
+    href: 'https://github.com/catalinpetrovici/Home_Dashboard',
+    description: `A self-hosted dashboard for the home. Users can sign up, log in and manage
+    their data through a React and TypeScript frontend. The Node.js and TypeScript backend
+    stores data in PostgreSQL and Redis, and collects data from devices over MQTT,
+    so the dashboard can show what is happening around the house.`,
+    Logo: {
+      Svg: NodeJSLogo,
+    },
+    image: {},
+  },
+  {
+    title: 'Summarizer',
+    subtitle: 'Browser Extension',
+    href: 'https://github.com/catalinpetrovici/summarizer',
+    description: `A browser extension that summarizes the page you are reading with AI
+    (Deepseek or OpenAI). Built with React, TypeScript and Vite on Manifest V3, with a
+    clean popup UI and summaries rendered as Markdown. It saves time on long articles
+    and documentation by giving you the key points in seconds.`,
     Logo: {
       Svg: ReactLogo,
     },
-    image: {
-      alt: 'React Projects Showcase',
-      scr: './React/React@1x.png',
-      height: '408',
-      width: '700',
-      source: [
-        {
-          srcset:
-            './React/React-mobile@2x.avif 2x, ./React/React-mobile@1x.avif',
-          type: 'image/avif',
-          media: '(max-width: 500px)',
-        },
-        {
-          srcset:
-            './React/React-mobile@2x.webp 2x, ./React/React-mobile@1x.webp',
-          type: 'image/webp',
-          media: '(max-width: 500px)',
-        },
-        {
-          srcset: './React/React-mobile@2x.png 2x, ./React/React-mobile@1x.png',
-          type: 'image/png',
-          media: '(max-width: 500px)',
-        },
-        {
-          srcset: './React/React@2x.avif 2x, ./React/React@1x.avif',
-          type: 'image/avif',
-          media: '',
-        },
-        {
-          srcset: './React/React@2x.webp 2x, ./React/React@1x.webp',
-          type: 'image/webp',
-          media: '',
-        },
-        {
-          srcset: './React/React@2x.png 2x',
-          type: 'image/png',
-          media: '',
-        },
-      ],
-    },
+    image: {},
   },
-  //
-  // NodeJS
-  //
-  // {
-  //   title: 'NodeJS',
-  //   subtitle: 'Collection',
-  //   href: 'https://github.com/catalinpetrovici/NodeJS_Projects',
-  //   description: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  //   Aenean commodo ligula eget dolor. Aenean massa.
-  //   Cum sociis natoque penatibus et magnis dis parturient montes,
-  //   nascetur ridiculus mus. Donec quam felis, ultricies nec,
-  //   pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.`,
-  //   Logo: {
-  //     Svg: NodeJSLogo,
-  //   },
-  //   image: {
-  //     // alt: 'NodeJS Projects Showcase',
-  //     // scr: './NodeJS/NodeJS@1x.png',
-  //     // height: '408',
-  //     // width: '700',
-  //     source: [
-  //       // {
-  //       //   srcset: './NodeJS/NodeJS-mobile@2x.avif 2x, ./NodeJS/NodeJS-mobile@1x.avif',
-  //       //   type: 'image/avif',
-  //       //   media: '(max-width: 500px)',
-  //       // },
-  //       // {
-  //       //   srcset: './NodeJS/NodeJS-mobile@2x.webp 2x, ./NodeJS/NodeJS-mobile@1x.webp',
-  //       //   type: 'image/webp',
-  //       //   media: '(max-width: 500px)',
-  //       // },
-  //       // {
-  //       //   srcset: './NodeJS/NodeJS-mobile@2x.png 2x, ./NodeJS/NodeJS-mobile@1x.png',
-  //       //   type: 'image/png',
-  //       //   media: '(max-width: 500px)',
-  //       // },
-  //       // {
-  //       //   srcset: './NodeJS/NodeJS@2x.avif 2x, ./NodeJS/NodeJS@1x.avif',
-  //       //   type: 'image/avif',
-  //       //   media: '',
-  //       // },
-  //       // {
-  //       //   srcset: './NodeJS/NodeJS@2x.webp 2x, ./NodeJS/NodeJS@1x.webp',
-  //       //   type: 'image/webp',
-  //       //   media: '',
-  //       // },
-  //       // {
-  //       //   srcset: './NodeJS/NodeJS@2x.png 2x',
-  //       //   type: 'image/png',
-  //       //   media: '',
-  //       // },
-  //     ],
-  //   },
-  // },
+  {
+    title: 'LambdaRouterFlow',
+    subtitle: 'Open Source Library',
+    href: 'https://github.com/catalinpetrovici/lambda-router-flow',
+    description: `A lightweight router for AWS Lambda, published on npm. It lets you define
+    routes like get('/roles') or patch('/roles/{roleId+}') inside a single Lambda function,
+    with middleware for checks such as permissions and built-in error handling. It keeps
+    serverless APIs small and readable without pulling in a full web framework.`,
+    Logo: {
+      Svg: AWSLogo,
+    },
+    image: {},
+  },
 ];
 ---
 
