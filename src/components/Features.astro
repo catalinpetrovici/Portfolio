@@ -1,29 +1,23 @@
 ---
-import ChevronUp from '@svg/Symbols/ChevronUp.astro';
-import ChevronDown from '@svg/Symbols/ChevronDown.astro';
-
 const mainSkills = [
   {
-    title: 'Frontend Developer',
-    description: `I build fast, accessible interfaces that are easy to use on any device. I work mostly with TypeScript, React, Next.js and Astro, styled with Tailwind CSS, and I care about the details: clear layouts, smooth interactions and good performance scores. I take a design from Figma to a polished, production-ready site, and I enjoy seeing real people use what I built.`,
+    title: 'Product Ownership',
+    lead: 'I think like an owner: I turn ideas into clear designs, take features from concept to delivery and proactively fix problems before they reach users.',
+    stack: ['Product Design', 'Figma', 'Design Systems', 'Storybook', 'End-to-End Ownership', 'Proactive Problem Solving'],
     image: {
-      alt: 'Website layout picture',
-      scr: './Frontend/FrontendPicture.png',
+      alt: 'Product roadmap board',
+      scr: './Product/ProductPicture.svg',
       height: '100',
-      width: '135',
-      source: [
-        {
-          srcset: './Frontend/FrontendPicture.webp',
-          type: 'image/webp',
-        },
-      ],
+      width: '150',
+      source: [],
     },
   },
   {
-    title: 'Backend Developer',
-    description: `I build the part of an app you don't see: APIs, databases and the servers that run them. I work with Node.js, TypeScript and Express, store data in PostgreSQL, MongoDB and Redis, and deploy with Docker, Nginx, AWS Lambda and Cloudflare. My focus is reliable, secure and maintainable systems, with clear APIs that the frontend and other services can trust.`,
+    title: 'Full Stack Engineer',
+    lead: 'I build products end to end: fast, accessible React interfaces on top of reliable, secure APIs, databases and cloud infrastructure.',
+    stack: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'AWS Lambda', 'DynamoDB', 'PostgreSQL', 'Docker', 'AWS CDK'],
     image: {
-      alt: 'Laptop with terminal open picture',
+      alt: 'Laptop with a terminal and a layered stack',
       scr: './Backend/BackendPicture.png',
       height: '100',
       width: '150',
@@ -37,7 +31,8 @@ const mainSkills = [
   },
   {
     title: 'Electrical Engineer',
-    description: `With an MSc in Advanced Electrical Systems and Structures, I design and build embedded and IoT systems, from microcontrollers and Raspberry Pi hubs to MQTT messaging and energy monitoring. I take ideas from schematic to working prototype, test them thoroughly and troubleshoot when things go wrong. Safety and efficiency guide every design, and my research on home energy management was published by IEEE.`,
+    lead: 'MSc in Advanced Electrical Systems and Structures. I take embedded and IoT systems from schematic to working prototype, with research published by IEEE.',
+    stack: ['MQTT', 'AWS IoT Core', 'Raspberry Pi', 'Arduino', 'BMS & Inverters', 'Energy Monitoring'],
     image: {
       alt: 'Breadboard with electrical components',
       scr: './ElectricalEngineer/ElectricalEngineer.png',
@@ -51,7 +46,20 @@ const mainSkills = [
       ],
     },
   },
+  {
+    title: 'Engineering Mindset',
+    lead: 'I approach every problem like an engineer: break it down, measure before optimizing, automate what repeats and build systems that are reliable, tested and easy to maintain.',
+    stack: ['Systems Thinking', 'Testing', 'CI/CD', 'Infrastructure as Code', 'Monitoring', 'Root Cause Analysis', 'Documentation'],
+    image: {
+      alt: 'Flowchart with a decision step and a feedback loop',
+      scr: './Engineering/EngineeringPicture.svg',
+      height: '100',
+      width: '150',
+      source: [],
+    },
+  },
 ];
+
 ---
 
 <section id='main-skills' class='mt-28'>
@@ -59,44 +67,41 @@ const mainSkills = [
 
   <ul class='cards'>
     {
-      mainSkills.map((item) => {
+      mainSkills.map((item, index) => {
         const { image } = item;
 
         return (
-          <li class='card border-light dark:border-dark'>
-            <picture>
-              {image.source.map((itemSource) => {
-                return (
-                  <source srcset={itemSource.srcset} type={itemSource.type} />
-                );
-              })}
+          <li class='card border-light dark:border-dark' style={`--reveal-delay: ${index * 120}ms`}>
+            <div class='card-top'>
+              <picture>
+                {image.source.map((itemSource) => {
+                  return (
+                    <source srcset={itemSource.srcset} type={itemSource.type} />
+                  );
+                })}
 
-              <img
-                class='m-auto'
-                height={image.height}
-                width={image.width}
-                src={image.scr}
-                alt={image.alt}
-              />
-            </picture>
+                <img
+                  height={image.height}
+                  width={image.width}
+                  src={image.scr}
+                  alt={image.alt}
+                />
+              </picture>
+              <span class='card-index text-fontLightGray1 dark:text-fontDarkGray4' aria-hidden='true'>
+                {String(index + 1).padStart(2, '0')}
+              </span>
+            </div>
 
             <h3>{item.title}</h3>
-            <p class='text-fontLightGray2 dark:text-fontDarkGray3 main-skills_description'>
-              {item.description}
-            </p>
-            <button class='btn-read-more hover:text-btnLight dark:hover:text-btnDark'>
-              <span class='btn-read-more-text'>Read more</span>
-              <ChevronDown
-                class='btn-read-more-open'
-                width='17px'
-                height='17px'
-              />
-              <ChevronUp
-                class='hidden btn-read-more-close'
-                width='17'
-                height='17'
-              />
-            </button>
+            <p class='text-fontLightGray2 dark:text-fontDarkGray3'>{item.lead}</p>
+
+            <ul class='stack' aria-label={`${item.title} stack`}>
+              {item.stack.map((tech) => (
+                <li class='border-fontLightGray1 text-fontLightGray3 dark:border-fontDarkGray4 dark:text-fontDarkGray5'>
+                  {tech}
+                </li>
+              ))}
+            </ul>
           </li>
         );
       })
@@ -105,98 +110,161 @@ const mainSkills = [
 </section>
 
 <style>
-  h3 {
-    margin-top: 2rem;
-    font-size: clamp(1.8rem, 4vw, 2rem);
-    font-weight: 600;
-    text-align: center;
-  }
-
-  p {
-    margin-top: 2rem;
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-  }
-
   .cards {
-    display: flex;
-    gap: 3rem;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    margin-top: 4rem;
+  }
+
+  @media (min-width: 710px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .card {
+    --accent: var(--btn-bg-color-light);
+    --accent-text: var(--font-color-light);
+    position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 4rem;
     border: 2px solid;
-    border-radius: 10px;
-    padding: 2rem 2rem;
-    max-width: 35rem;
+    border-radius: 1rem;
+    padding: 2.4rem;
+    transition:
+      border-color 200ms ease,
+      transform 200ms ease;
   }
 
-  svg {
-    margin-top: 2rem;
-    margin: 0 auto;
+  @media (prefers-color-scheme: dark) {
+    .card {
+      --accent: var(--btn-bg-color-dark);
+      --accent-text: var(--btn-bg-color-dark);
+    }
   }
 
-  button {
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  .card-top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .card-top img {
+    height: 7rem;
+    width: auto;
+  }
+
+  .card-index {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: color 200ms ease;
+  }
+
+  .card:hover .card-index {
+    color: var(--accent-text);
+  }
+
+  h3 {
+    margin-top: 2.4rem;
+    font-size: clamp(1.8rem, 4vw, 2rem);
     font-weight: 600;
   }
 
-  button svg {
-    margin: 0;
-    margin-left: 1rem;
-    transition: all 200ms ease-in;
+  h3::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 2px;
+    margin-top: 1rem;
+    background: var(--accent);
+    transition: width 300ms ease;
   }
 
-  .btn-read-more {
-    display: inline-flex;
-    margin-top: 2rem;
-    font-size: 1.4rem;
+  .card:hover h3::after {
+    width: 6rem;
+  }
+
+  p {
+    margin-top: 1.6rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.5rem);
+    line-height: 1.7;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: auto;
+    padding-top: 2.4rem;
+  }
+
+  .stack li {
+    border: 1px solid;
+    border-radius: 999px;
+    padding: 0.3rem 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  /* Hidden only once JS confirms it can reveal them, so content never stays invisible */
+  :global(.reveal-ready) .card {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 500ms ease var(--reveal-delay),
+      transform 500ms ease var(--reveal-delay),
+      border-color 200ms ease;
+  }
+
+  :global(.reveal-ready) .card.revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  :global(.reveal-ready) .card.revealed:hover {
+    transform: translateY(-4px);
+    transition:
+      border-color 200ms ease,
+      transform 200ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card,
+    .card:hover,
+    h3::after {
+      transform: none;
+      transition: none;
+    }
   }
 </style>
 
 <script>
-  const maxNumberCharacters = 200;
-  const descriptionParagraphs = document.querySelectorAll(
-    '.main-skills_description'
-  )!;
-  const descriptionButtons = document.querySelectorAll('.btn-read-more')!;
+  const cardList = document.querySelector('#main-skills .cards');
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
-  descriptionParagraphs.forEach((paragraph) => {
-    if (!paragraph.textContent) return;
-
-    if (paragraph.textContent.length < maxNumberCharacters) {
-    } else {
-      const textContent = paragraph.textContent.slice(0, maxNumberCharacters);
-      const moreTextContent = paragraph.textContent.slice(maxNumberCharacters);
-      paragraph.innerHTML = `${textContent}<span class="read-more-dots">...</span><span class="hidden read-more-text">${moreTextContent}</span>`;
-    }
-  });
-
-  descriptionButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const paragraph = button.parentElement! as HTMLDivElement;
-      if (!paragraph) return;
-
-      paragraph.querySelector('.read-more-dots')?.classList.toggle('hidden');
-      paragraph.querySelector('.read-more-text')?.classList.toggle('hidden');
-      paragraph
-        .querySelector('.btn-read-more-open')
-        ?.classList.toggle('hidden');
-      paragraph
-        .querySelector('.btn-read-more-close')
-        ?.classList.toggle('hidden');
-
-      const buttonText = paragraph.querySelector('.btn-read-more-text');
-      if (!buttonText) return;
-
-      buttonText.textContent?.startsWith('Read more')
-        ? (buttonText.textContent = 'Read less')
-        : (buttonText.textContent = 'Read more');
-    });
-  });
+  if (cardList && !prefersReducedMotion && 'IntersectionObserver' in window) {
+    cardList.classList.add('reveal-ready');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          cardList
+            .querySelectorAll('.card')
+            .forEach((card) => card.classList.add('revealed'));
+          observer.disconnect();
+        });
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(cardList);
+  }
 </script>
