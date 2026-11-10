@@ -18,7 +18,7 @@ export default defineConfig({
   site: 'https://catalinpetrovici.com',
   // Keep Astro 2 styling/whitespace behavior after the upgrade
   scopedStyleStrategy: 'where',
-  compressHTML: true,
+  compressHTML: false,
   integrations: [
     robotsTxt(),
     sitemap(),
