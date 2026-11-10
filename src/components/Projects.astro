@@ -1,4 +1,5 @@
 ---
+import PrimeBatteriesLogo from '@svg/projects/PrimeBatteries.astro';
 import CaierSpaceLogo from '@svg/projects/CaierSpace.astro';
 import HemsLogo from '@svg/projects/Hems.astro';
 import SmartHomeLogo from '@svg/projects/SmartHome.astro';
@@ -8,6 +9,22 @@ import AWSLogo from '@svg/logoSection/AWS.astro';
 import ArrowRight from '@svg/Symbols/ArrowRight.astro';
 
 const projects = [
+  {
+    title: 'Prime Batteries EMS/SCADA Platform',
+    subtitle: 'Client Project',
+    href: 'https://primebatteries.com',
+    description: `A cloud platform for Prime Batteries Technology, a company that builds and installs
+    battery energy storage systems (BESS). I owned the full cycle, from architecture and design to
+    implementation and administration. TypeScript microservices on Node.js and AWS Lambda collect
+    data from battery management systems and inverters over MQTT and AWS IoT Core, storing it in
+    DynamoDB, PostgreSQL and InfluxDB. A React dashboard gives the technical team and end customers
+    real-time monitoring, remote control and troubleshooting, and the whole infrastructure is
+    deployed as code with AWS CDK.`,
+    Logo: {
+      Svg: PrimeBatteriesLogo,
+    },
+    image: {},
+  },
   {
     title: 'CaierSpace.com',
     subtitle: 'Website',
