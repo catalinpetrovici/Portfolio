@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import robotsTxt from 'astro-robots-txt';
-import { VitePWA } from 'vite-plugin-pwa';
+import { AstroPWAIntegration } from '@vite-pwa/astro';
 import sitemap from '@astrojs/sitemap';
 import { manifest } from './src/utils/manifest';
 import partytown from '@astrojs/partytown';
@@ -16,8 +16,10 @@ export default defineConfig({
   //   host: true
   // },
   site: 'https://catalinpetrovici.com',
+  // Keep Astro 2 styling/whitespace behavior after the upgrade
+  scopedStyleStrategy: 'where',
+  compressHTML: true,
   integrations: [
-    tailwind(),
     robotsTxt(),
     sitemap(),
     partytown({
@@ -26,18 +28,19 @@ export default defineConfig({
       },
     }),
     react(),
+    AstroPWAIntegration({
+      registerType: 'autoUpdate',
+      generateSW: {
+        // Don't fallback on document based (e.g. `/some-page`) requests
+        // This removes an errant console.log message from showing up.
+        navigateFallback: null,
+      },
+      manifest,
+    }),
   ],
   vite: {
     plugins: [
-      VitePWA({
-        registerType: 'autoUpdate',
-        workbox: {
-          // Don't fallback on document based (e.g. `/some-page`) requests
-          // This removes an errant console.log message from showing up.
-          navigateFallback: null,
-        },
-        manifest,
-      }),
+      tailwindcss(),
     ],
     // build: {
     //   rollupOptions: {

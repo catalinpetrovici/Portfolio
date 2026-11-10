@@ -1,4 +1,4 @@
-import { object, InferType, string } from 'yup';
+import { object, type InferType, string } from 'yup';
 
 export const schema = object().shape({
   name: string()

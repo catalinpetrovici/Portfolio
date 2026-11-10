@@ -1,4 +1,4 @@
-import { useField, FieldHookConfig } from 'formik';
+import { useField, type FieldHookConfig } from 'formik';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface OtherProps {

@@ -1,12 +1,12 @@
 import {
-  FormikHelpers,
+  type FormikHelpers,
   useFormik,
   ErrorMessage,
   Formik,
   Form,
   Field,
 } from 'formik';
-import { schema, Input } from './schema';
+import { schema, type Input } from './schema';
 import { CustomInput, CustomSelect, CustomTextarea } from './CustomInput';
 import { AnimatePresence, motion } from 'framer-motion';
 
