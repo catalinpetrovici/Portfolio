@@ -29,25 +29,36 @@ const options = [
   },
 ];
 
+// Public by design: the key only lets someone send email to this inbox
+const WEB3FORMS_ACCESS_KEY = '6afe3339-fec9-4d1f-83f3-22346105a158';
+
 const onSubmit = async (values: Input, actions: FormikHelpers<Input>) => {
   try {
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve('');
-      }, 2000)
-    );
-    await fetch('https://mailthis.to/Catalin%20Petrovici', {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
-      body: JSON.stringify(values),
-    }).then(() => {
-      window.location.href = 'https://mailthis.to/confirm';
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `Portfolio contact: ${values.jobType}`,
+        from_name: 'catalinpetrovici.com',
+        ...values,
+      }),
     });
-  } catch (error) {}
-
-  actions.resetForm();
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message ?? result.body?.message ?? result.error ?? `HTTP ${response.status}`
+      );
+    }
+    actions.resetForm();
+    actions.setStatus('sent');
+  } catch (error) {
+    console.error('Contact form submission failed:', error);
+    actions.setStatus('error');
+  }
 };
 
 const ContactForm = () => {
@@ -57,7 +68,7 @@ const ContactForm = () => {
       validationSchema={schema}
       onSubmit={onSubmit}
     >
-      {({ isSubmitting, values, handleBlur, handleChange }) => (
+      {({ isSubmitting, status, values, handleBlur, handleChange }) => (
         <Form
           autoComplete='off'
           className='mt-10 text-[14px] md:text-[16px] leading-[2.5]'
@@ -127,14 +138,18 @@ const ContactForm = () => {
             Submit
           </button>
           <AnimatePresence>
-            {isSubmitting && (
+            {(isSubmitting || status) && (
               <motion.span
+                key={isSubmitting ? 'sending' : status}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                You will be redirected in 2 seconds! Thank you for submitting
-                the form!
+                {isSubmitting
+                  ? 'Sending...'
+                  : status === 'sent'
+                    ? 'Thank you! Your message was sent. I will get back to you soon.'
+                    : 'Sorry, your message could not be sent. Please try again or email me directly.'}
               </motion.span>
             )}
           </AnimatePresence>
