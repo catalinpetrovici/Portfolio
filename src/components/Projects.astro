@@ -1,5 +1,6 @@
 ---
 import PrimeBatteriesLogo from '@svg/projects/PrimeBatteries.astro';
+import LoricaLogo from '@svg/projects/Lorica.astro';
 import CaierSpaceLogo from '@svg/projects/CaierSpace.astro';
 import HemsLogo from '@svg/projects/Hems.astro';
 import SmartHomeLogo from '@svg/projects/SmartHome.astro';
@@ -22,6 +23,23 @@ const projects = [
     deployed as code with AWS CDK.`,
     Logo: {
       Svg: PrimeBatteriesLogo,
+    },
+    image: {},
+  },
+  {
+    title: 'Lorica Platform',
+    subtitle: 'SaaS',
+    href: 'https://loricaplatform.com',
+    description: `Lorica is shared infrastructure for organizations that work together. Security
+    companies, agencies and their partners coordinate people, capabilities and credentials across
+    organizational boundaries, while each keeps control of its own data. I joined to speed up an
+    early, fast-moving build, then proposed and led a complete rebuild from scratch, and I am now
+    the platform's sole developer. The new version has a simple, well-structured architecture with
+    enforced boundaries, guardrail tests and documented business rules, so new features ship safely
+    without breaking existing ones. It runs on Next.js, React and TypeScript on Vercel, with Drizzle
+    ORM over Neon PostgreSQL, Stripe billing, better-auth and Cloudflare R2.`,
+    Logo: {
+      Svg: LoricaLogo,
     },
     image: {},
   },
